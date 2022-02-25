@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 40%;
+            margin: 0 auto;
+        }
+
+        .form input {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <input type="text" placeholder="name" id="name">
+        <input type="text" placeholder="nationality" id="nation">
+        <input type="text" placeholder="Phone" id="phone">
+        <input type="email" placeholder="Email" id="email">
+        <input type="text" placeholder="message" id="message">
+        <div class="checkBox">
+            <input type="checkbox" id="policy">
+            <label htmlfor="policy">개인정보수집 및 이용동의</label>
+            <a href="#3">이용약관 보기</a>
+        </div>
+        <button onclick="handleForm()">온라인 상담 신청하기</button>
+    </form>
+    <script>
+        let name = document.querySelector(".form #name");
+        let nation = document.querySelector(".form #nation");
+        let phone = document.querySelector(".form #phone");
+        let email = document.querySelector(".form #email");
+        function handleForm(){
+            if (name.value == "" ) {
+                alert("이름이 비어있습니다.")
+                return name.focus();
+            }
+            
+            else if (nation.value == "" ) {
+                alert("국적이 비어있습니다.")
+                return nation.focus();
+            }
+            
+            else if (phone.value == "" && email.value =="") {
+                alert("휴대폰 번호 또는 이메일을 입력해주세요.")
+                    return phone.focus();
+            }
+            alert("전송되었습니다.")
+        }
+    </script>
+</body>
+</html>
