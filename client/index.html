@@ -1,61 +1,133 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Document</title>
-    <style>
-        .form {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 40%;
-            margin: 0 auto;
-        }
+  </head>
+  <body>
+    <main id="wrap">
+      <section id="section1">
+        <img src="./assets/img/main.png" alt="" />
+      </section>
+      <!-- //section1 -->
+      <section id="section2">
+        <div class="container">
+          <button>
+            <img src="./assets/img/button.png" alt="" />
+          </button>
+          <div class="sec2_contents_why">
+            <img src="./assets/img/section1.png" alt="" />
+            <h2>왜 필요한가요?</h2>
+            <p class="why_text">
+              출입국하는 외국인 및 국내 체류 외국인들을 위한
+              <strong>온라인 민원 대행 서비스</strong>
+              를 제공합니다. 민원별 유능한 전문가를 보유 중이며 한국 체류 관련
+              총 33종의 민원 대행으로 구성되어 있습니다.
+              <span>비자, 체류, 국적, 난민, 외국인 등록, 기타 등</span>
+            </p>
+          </div>
+          <div class="sec2_gridContainer">
+            <div class="sec2_gridItem">
+              <h4>여러 국가 경험</h4>
+              <img src="./assets/img/section2_img1.png" alt="" />
+            </div>
+            <div class="sec2_gridItem">
+              <h4>전문성</h4>
+              <img src="./assets/img/section2_img2.png" alt="" />
+            </div>
+            <div class="sec2_gridItem">
+              <h4>복잡한 업무</h4>
+              <img src="./assets/img/section2_img3.png" alt="" />
+            </div>
+            <div class="sec2_gridItem">
+              <h4>간편하게 해결</h4>
+              <img src="./assets/img/section2_img4.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- //section2 -->
+      <section id="section3">
+        <div class="container">
+          <h2>어떻게 진행되나요?</h2>
+          <p>
+            외국인외 한국 체류 편의를 위한 온라인 민원 서비스를 제공합니다.
+            <br />
+            언제 어디서나 필요한 민원 서비스를 신청하세요.
+          </p>
+          <div class="sec3_contents">
+            <div class="sec3_stepBox">
+              <h4>Step 01</h4>
+              <img src="./assets/img/section3_step1.png" alt="" />
+            </div>
+            <div class="sec3_stepBox">
+              <h4>Step 01</h4>
+              <img src="./assets/img/section3_step2.png" alt="" />
+            </div>
+            <div class="sec3_stepBox">
+              <h4>Step 01</h4>
+              <img src="./assets/img/section3_step3.png" alt="" />
+            </div>
+            <div class="sec3_stepBox">
+              <h4>Step 01</h4>
+              <img src="./assets/img/section3_step4.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- //section3 -->
+      <section id="section4">
+        <h2>영진법무법인은 국내 체류 이후에도 계속됩니다.</h2>
+        <p>어쩌고저쩌고</p>
+      </section>
+      <!-- //section4 -->
+      <section id="section5">
+        <h2>무엇이든 물어보세요</h2>
+        <p>
+          복잡한 이민 관련 정보를 더 이상 힘들게 찾지 마세요. <br />
+          여러분의 궁금증을 간단하게 해결해드립니다. <br />
+          대한민국에서 편안하게 생활할 수 있도록 최선을 다해 도와드리겠습니다.
+        </p>
 
-        .form input {
-            width: 100%;
-        }
-    </style>
-</head>
-<body>
-    <div class="form">
-        <input type="text" placeholder="name" id="name">
-        <input type="text" placeholder="nationality" id="nation">
-        <input type="text" placeholder="Phone" id="phone">
-        <input type="email" placeholder="Email" id="email">
-        <input type="text" placeholder="message" id="message">
-        <div class="checkBox">
-            <input type="checkbox" id="policy">
+        <form class="form">
+          <input type="text" placeholder="name" id="name" />
+          <input type="text" placeholder="nationality" id="nation" />
+          <input type="text" placeholder="Phone" id="phone" />
+          <input type="email" placeholder="Email" id="email" />
+          <input type="text" placeholder="message" id="message" />
+          <div class="checkBox">
+            <input type="checkbox" id="policy" />
             <label htmlfor="policy">개인정보수집 및 이용동의</label>
             <a href="#3">이용약관 보기</a>
-        </div>
-        <button onclick="handleForm()">온라인 상담 신청하기</button>
-    </form>
+          </div>
+          <button onclick="handleForm()">온라인 상담 신청하기</button>
+        </form>
+      </section>
+      <!-- section5 -->
+    </main>
+
     <script>
-        let name = document.querySelector(".form #name");
-        let nation = document.querySelector(".form #nation");
-        let phone = document.querySelector(".form #phone");
-        let email = document.querySelector(".form #email");
-        function handleForm(){
-            if (name.value == "" ) {
-                alert("이름이 비어있습니다.")
-                return name.focus();
-            }
-            
-            else if (nation.value == "" ) {
-                alert("국적이 비어있습니다.")
-                return nation.focus();
-            }
-            
-            else if (phone.value == "" && email.value =="") {
-                alert("휴대폰 번호 또는 이메일을 입력해주세요.")
-                    return phone.focus();
-            }
-            alert("전송되었습니다.")
+      let name = document.querySelector(".form #name");
+      let nation = document.querySelector(".form #nation");
+      let phone = document.querySelector(".form #phone");
+      let email = document.querySelector(".form #email");
+      function handleForm(e) {
+        e.preventDefalut;
+        if (name.value == "") {
+          alert("이름이 비어있습니다.");
+          return name.focus();
+        } else if (nation.value == "") {
+          alert("국적이 비어있습니다.");
+          return nation.focus();
+        } else if (phone.value == "" && email.value == "") {
+          alert("휴대폰 번호 또는 이메일을 입력해주세요.");
+          return phone.focus();
         }
+        alert("전송되었습니다.");
+      }
     </script>
-</body>
+  </body>
 </html>
