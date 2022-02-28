@@ -14,7 +14,14 @@
 
 .form input {
   width: 100%;
+    margin: 10px 20px;
+}
 
+.form textarea {
+    width: 100%;
+    margin: 10px 20px;
+    resize: none;
+    height: 200px;
 }
 
 #modal {
