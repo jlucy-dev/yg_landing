@@ -20,8 +20,24 @@
             한국 출입국 및 체류 외국인을 위한<br />
             <strong>온라인 민원 대행</strong> 서비스
           </h1>
+    <!-- <section class="formSection">
+      <form class="form">
+        <input type="text" placeholder="name" id="username" />
+        <input type="text" placeholder="nationality" id="nation" />
+        <input type="text" placeholder="Phone" id="phone" />
+        <input type="email" placeholder="Email" id="email" />
+        <textarea type="text" placeholder="message" id="message"></textarea>
+
+        <div class="checkBox">
+          <input
+            type="checkbox"
+            id="policy"
+            onclick="getCheckboxValue(event)"
+          />
+          <label htmlfor="policy">개인정보수집 및 이용동의</label>
+          <a href="#3">이용약관 보기</a>
         </div>
-      </section>
+      </section> -->
       <!-- //section1 -->
 
       <section id="section2">
@@ -147,14 +163,25 @@
       let phone = document.querySelector(".form #phone");
       let email = document.querySelector(".form #email");
       let message = document.querySelector(".form #message");
+      let checkbox = document.querySelector(".form .checkbox #policy");
+      let checkValue = "";
       const modal = document.querySelector("#modal");
       const modalClose = document.querySelector(
         "#modal .modal_box .modal_close"
       );
 
+
+      function getCheckboxValue(event) {
+        if (event.target.checked) {
+          checkValue = event.target.value;
+        } else {
+          checkValue = "";
+        }
+      }
+
       Form.addEventListener("submit", (e) => {
         e.preventDefault();
-        // validateForm();
+        validateForm();
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
@@ -181,12 +208,13 @@
             console.log("error", error);
             alert(result);
           });
-
-        modal.style.display = "flex";
       });
+
       modalClose.addEventListener("click", () => {
         modal.style.display = "none";
       });
+
+
       function validateForm() {
         if (username.value == "") {
           alert("이름이 비어있습니다!");
@@ -197,7 +225,11 @@
         } else if (phone.value == "" && email.value == "") {
           alert("휴대폰 번호 또는 이메일을 입력해주세요.");
           return phone.focus();
+        } else if (checkValue == "") {
+          alert("개인정보 동의에 체크해주세요");
+          return false;
         }
+        modal.style.display = "flex";
       }
     </script>
   </body>
