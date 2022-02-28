@@ -1,0 +1,50 @@
+/* 문의하기 폼 스타일링 */
+.formSection {
+    height: 100vh;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.form input {
+  width: 100%;
+
+}
+
+#modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    background-color: rgba(109, 109, 109, 0.1);
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#modal .modal_box {
+    width: 50%;
+    background: rgba(255, 255, 255, 1);
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#modal .modal_close {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}

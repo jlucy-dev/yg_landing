@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <section class="formSection">
+      <form class="form">
+        <input type="text" placeholder="name" id="username" />
+        <input type="text" placeholder="nationality" id="nation" />
+        <input type="text" placeholder="Phone" id="phone" />
+        <input type="email" placeholder="Email" id="email" />
+        <input type="text" placeholder="message" id="message" />
+        <div class="checkBox">
+          <input type="checkbox" id="policy" />
+          <label htmlfor="policy">개인정보수집 및 이용동의</label>
+          <a href="#3">이용약관 보기</a>
+        </div>
+        <button type="submit">온라인 상담 신청하기</button>
+      </form>
+      <div id="modal">
+        <div class="modal_box">
+          <h2>상담신청 완료</h2>
+          <a href="https://mykoreavisa.com/">더 알아보기</a>
+          <span class="modal_close">X</span>
+        </div>
+      </div>
+    </section>
+    <script>
+      const Form = document.querySelector(".form");
+      let username = document.querySelector(".form #username");
+      let nation = document.querySelector(".form #nation");
+      let phone = document.querySelector(".form #phone");
+      let email = document.querySelector(".form #email");
+      let message = document.querySelector(".form #message");
+      const modal = document.querySelector("#modal");
+      const modalClose = document.querySelector("#modal .modal_box .modal_close");
+
+      Form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        // validateForm();
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+          name: username.value,
+          nation: nation.value,
+          phone: phone.value,
+          email: email.value,
+          message: message.value,
+        });
+
+        var requestOptions = {
+          method: "POST",
+          headers: myHeaders,
+          body: raw,
+          redirect: "follow",
+        };
+
+        fetch("http://3.38.166.125/server/", requestOptions)
+          .then((response) => {
+            response.text();
+          })
+          .catch((error) => {
+            console.log("error", error);
+            alert(result);
+          });
+
+        modal.style.display = "flex";
+      });
+      modalClose.addEventListener("click", () => {
+        modal.style.display = "none"
+      })
+      function validateForm() {
+        if (username.value == "") {
+          alert("이름이 비어있습니다!");
+          return username.focus();
+        } else if (nation.value == "") {
+          alert("국적이 비어있습니다.");
+          return nation.focus();
+        } else if (phone.value == "" && email.value == "") {
+          alert("휴대폰 번호 또는 이메일을 입력해주세요.");
+          return phone.focus();
+        }
+      }
+    </script>
+  </body>
+</html>
