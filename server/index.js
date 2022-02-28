@@ -30,6 +30,10 @@ app.post("/", (req, res) => {
   });
 });
 
+app.get("/", (req, res) => {
+  res.send("서버 연결 확인");
+});
+
 app.listen(4000, () => {
   console.log("back running");
 });
