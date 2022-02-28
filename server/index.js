@@ -30,7 +30,7 @@ app.post("/", (req, res) => {
   });
 });
 
-app.get("/", (req, res) => {
+app.get("/check", (req, res) => {
   res.send("서버 연결 확인");
 });
 
