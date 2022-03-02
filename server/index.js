@@ -16,12 +16,11 @@ const db = mysql.createConnection({
 app.post("/", (req, res) => {
   const name = req.body.name;
   const nation = req.body.nation;
-  const email = req.body.email;
-  const phone = req.body.phone;
+  const contact = req.body.contact;
   const message = req.body.message;
   const sqlPost =
-    "INSERT INTO customer (name, nation, email, phone, message) VALUES (?, ?, ?, ?, ?)";
-  db.query(sqlPost, [name, nation, email, phone, message], (err, result) => {
+    "INSERT INTO customer (name, nation, contact, message) VALUES (?, ?, ?, ?)";
+  db.query(sqlPost, [name, nation, contact, message], (err, result) => {
     if (err) {
       console.log(err);
     } else {
