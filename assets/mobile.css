@@ -1,0 +1,159 @@
+@media (max-width:768px) {
+
+    /* common */
+    .container {
+        width: 100%;
+    }
+
+    /* section1 */
+
+
+    .blueBox {
+        width: 100%;
+        height: 300px;
+    }
+
+    .blueBox h1 {
+        width: 70%;
+        margin: 0 auto;
+        font-size: 2rem;
+    }
+
+    /* section2 */
+
+    #section2 {
+        margin-top: 20px;
+    }
+
+    .sec2_contents_why {
+        margin-top: 50px;
+        margin-bottom: 0;
+    }
+
+
+    .why_text {
+        font-size: 1.5rem;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .why_text span {
+        margin-top: 30px;
+    }
+
+    /* section3 */
+
+    #section3 {
+        margin-top: 20px;
+    }
+
+    #section3 h2 {
+        font-size: 2rem;
+    }
+
+    .sec3_contents {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sec3_contents h4 {
+        color: #00aefe;
+        font-family: 'GmarketSansBold';
+        font-size: 2rem;
+        margin-bottom: -20px;
+    }
+
+
+    /* form section */
+    .formSection h2 {
+        margin-bottom: 20px;
+    }
+
+    .formSection p {
+        text-align: center;
+        font-family: 'GmarketSansMedium';
+        font-size: 1.5rem;
+    }
+
+    /* 문의하기 폼 스타일링 */
+    .formSection {
+        margin-bottom: 100px;
+    }
+
+    .formSection h2 {
+        font-size: 2rem;
+    }
+
+    .formSection>p {
+        font-size: 1.2rem;
+    }
+
+    .form {
+        margin: 0 auto;
+        margin-top: 50px;
+        width: 80%;
+    }
+
+    .form input:not(.checkBox input) {
+        padding-left: 55px;
+    }
+
+
+    .form textarea {
+        padding-left: 55px;
+    }
+
+    /* checkbox */
+
+
+    /* footer */
+    #footer {
+        height: 100%;
+    }
+
+    #footer .container {
+        width: 85%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footerLeft {
+        width: 80%;
+    }
+
+    .footerLeft p {
+        margin-top: 30px;
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .footerRight {
+        width: 90%;
+    }
+
+    .footerRight ul {
+        color: #fff;
+        font-size: 1.1rem;
+        line-height: 1.25;
+        display: flex;
+        margin: 10px 0;
+    }
+
+    .footerRight ul p {
+        color: #fff;
+        flex: 1 1 40%;
+        text-align: center;
+    }
+
+    .footerRight li {
+        list-style: ' - ';
+        color: #fff;
+        font-family: 'GmarketSansLight';
+        flex: 1 1 60%;
+        word-break: keep-all;
+    }
+
+}

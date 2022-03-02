@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
   <link rel="stylesheet" href="./assets/style.css" />
+  <link rel="stylesheet" href="./assets/mobile.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
 </head>
 
@@ -88,16 +89,18 @@
           <label htmlfor="policy">개인정보수집 및 이용동의</label>
           <a href="#3">[개인정보처리방침]</a>
         </div>
-        <button type="submit">온라인 상담 신청하기</button>
+        <button type="submit">제출하기</button>
       </form>
       <h2>😄 감사합니다 😄</h2>
-      <div id="modal">
-        <div class="modal_box">
-          <h2>상담신청 완료</h2>
-          <a href="https://mykoreavisa.com/">더 알아보기</a>
-          <span class="modal_close">X</span>
+      <!-- 모달 제거 요청 적용
+        <div id="modal">
+          <div class="modal_box">
+            <h2>상담신청 완료</h2>
+            <a href="https://mykoreavisa.com/">더 알아보기</a>
+            <span class="modal_close">X</span>
+          </div>
         </div>
-      </div>
+       -->
     </section>
     <!-- formSection -->
 
@@ -146,10 +149,11 @@
     let message = document.querySelector(".form #message");
     let checkbox = document.querySelector(".form .checkbox #policy");
     let checkValue = "";
-    const modal = document.querySelector("#modal");
-    const modalClose = document.querySelector(
-      "#modal .modal_box .modal_close"
-    );
+    // 모달 제거 요청 적용
+    // const modal = document.querySelector("#modal");
+    // const modalClose = document.querySelector(
+    //   "#modal .modal_box .modal_close"
+    // );
 
 
     function getCheckboxValue(event) {
@@ -190,12 +194,13 @@
           console.log("error", error);
         });
 
-
+      // 모달 제거
       // modal.style.display = "flex";
     });
-    modalClose.addEventListener("click", () => {
-      modal.style.display = "none";
-    });
+    // 모달 제거
+    // modalClose.addEventListener("click", () => {
+    //   modal.style.display = "none";
+    // });
 
     function validateForm(event) {
       if (username.value == "") {
@@ -211,6 +216,8 @@
         alert("개인정보 동의에 체크해주세요");
         return false;
       }
+
+      alert("요청이 접수되었습니다. 잠시 후 안내 페이지로 이동합니다.")
     }
   </script>
 </body>
