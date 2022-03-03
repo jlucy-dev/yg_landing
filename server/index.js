@@ -19,9 +19,10 @@ app.post("/", (req, res) => {
   const nation = req.body.nation;
   const contact = req.body.contact;
   const message = req.body.message;
+  const date = new Date();
   const sqlPost =
-    "INSERT INTO customer (name, nation, contact, message) VALUES (?, ?, ?, ?)";
-  db.query(sqlPost, [name, nation, contact, message], (err, result) => {
+    "INSERT INTO customer (name, nation, contact, message, date) VALUES (?, ?, ?, ?, ?)";
+  db.query(sqlPost, [name, nation, contact, message, date], (err, result) => {
     if (err) {
       console.log(err);
     } else {
