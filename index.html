@@ -12,9 +12,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
     />
     <script type="application/javascript">
-      let locationCheck = "";
+      let locationCheck = false;
       function getIP(json) {
-        console.log(json);
         locationCheck = String(json.ip);
       }
     </script>
@@ -22,6 +21,28 @@
       type="application/javascript"
       src="https://api.ipify.org?format=jsonp&callback=getIP"
     ></script>
+
+    <script>
+      // 코드 변경 예정
+      //  window.onload = () => {
+      //   var myHeaders = new Headers();
+      //   myHeaders.append("Access-Control-Allow-Origin", " *");
+
+      //   var requestOptions = {
+      //     method: "GET",
+      //     headers: myHeaders,
+      //     redirect: "follow",
+      //   };
+
+      //  fetch(
+      //     `http://whois.kisa.or.kr/openapi/ipascc.jsp?query=${locationCheck}&key=2022030312202739331643&answer=json`,
+      //     requestOptions
+      //   )
+      //     .then((response) => response.text())
+      //     .then((result) => console.log(result))
+      //     .catch((error) => console.log("error", error));
+      // };
+    </script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript">
       var ip = locationCheck;
@@ -32,9 +53,18 @@
           data: { apiKey: api_key, ipAddress: ip },
           success: function (data) {
             let location = JSON.stringify(data.location.country);
-            console.log(location)
-            if (location = "KR") {
+            console.log(location);
+            if ((location = "KR")) {
+              window.location.href = "http://3.38.166.125/pages/index_kr.html";
+            }
+            if ((location = "US")) {
               window.location.href = "http://3.38.166.125/pages/index_usa.html";
+            }
+            if ((location = "VN")) {
+              window.location.href = "http://3.38.166.125/pages/index_vn.html";
+            }
+            if ((location = "RUS")) {
+              window.location.href = "http://3.38.166.125/pages/index_rus.html";
             }
           },
         });
@@ -76,5 +106,9 @@
       </div>
       <h1 class="loading">Loading...</h1>
     </main>
+    <h2>
+      { "whois":{ "query":"202.30.50.0", "queryType":"IPv4", "registry":"KRNIC",
+      "countryCode":"KR" } }
+    </h2>
   </body>
 </html>
