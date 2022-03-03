@@ -6,17 +6,19 @@
     }
 
     /* section1 */
-
+    #section1 img {
+        height: 50%;
+    }
 
     .blueBox {
         width: 100%;
-        height: 300px;
+        height: 150px;
     }
 
     .blueBox h1 {
         width: 70%;
         margin: 0 auto;
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     /* section2 */
@@ -32,7 +34,8 @@
 
 
     .why_text {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+        line-height: 1.5;
         width: 80%;
         margin: 0 auto;
     }
@@ -52,8 +55,10 @@
     }
 
     .sec3_contents {
-        display: flex;
-        flex-direction: column;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* flex-direction: column; */
     }
 
     .sec3_contents h4 {
@@ -63,6 +68,14 @@
         margin-bottom: -20px;
     }
 
+    .sec3_stepBox {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .sec3_stepBox img {
+        width: 100%;
+    }
 
     /* form section */
     .formSection h2 {
@@ -109,6 +122,7 @@
     /* footer */
     #footer {
         height: 100%;
+        padding-bottom: 50px;
     }
 
     #footer .container {

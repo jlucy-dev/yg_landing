@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const requstip= require("request-ip");
 const cors = require("cors");
 const mysql = require("mysql");
 
@@ -28,6 +29,12 @@ app.post("/", (req, res) => {
     }
   });
 });
+
+// 아이피 주소 받아오기 IPv6
+app.get("/", (req, res) => {
+  res.send("ip check");
+  console.log("client IP" + requstip.getClientIp(req))
+})
 
 app.get("/check", (req, res) => {
   res.send("서버 연결 확인");
