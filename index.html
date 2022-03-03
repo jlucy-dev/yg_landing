@@ -25,7 +25,7 @@
 
     <script>
       // 코드 변경 예정
-       const handleRedirect = () => {
+      const handleRedirect = () => {
         var myHeaders = new Headers();
         myHeaders.append("Access-Control-Allow-Origin", "http://3.38.166.125/");
 
@@ -35,12 +35,17 @@
           redirect: "follow",
         };
 
-       fetch(
+        fetch(
           `https://cors-anywhere.herokuapp.com/http://whois.kisa.or.kr/openapi/ipascc.jsp?query=${locationCheck}&key=2022030312202739331643&answer=json`,
           requestOptions
         )
           .then((response) => response.text())
-          .then((result) => console.log(result))
+          .then((result) => {
+            let nationCode = (Object.values(result)[88] + Object.values(result)[89]).toLowerCase();
+            console.log(nationCode);
+            if(nationCode){
+            window.location.href = `http://3.38.166.125/pages/index_${nationCode}.html`;}
+          })
           .catch((error) => console.log("error", error));
       };
       handleRedirect();
