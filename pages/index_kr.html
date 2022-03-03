@@ -74,7 +74,7 @@
             <input type="text" placeholder="name" id="username" />
             <i class="fas fa-user formicon"></i>
           </div>
-          <div class="forminputbox">
+          <div class="forminputbox nationBox">
             <input
               list="nationlist"
               placeholder="nationality"
@@ -91,7 +91,7 @@
             <option value="etc..."></option>
           </datalist>
           <div class="forminputbox etcBox" style="display: none">
-            <input type="text" placeholder="write your country" id="contact" />
+            <input type="text" placeholder="write your country" id="nation" />
             <i class="fas fa-flag formicon"></i>
           </div>
           <div class="forminputbox">
@@ -170,6 +170,7 @@
       let contact = document.querySelector(".form #contact");
       let message = document.querySelector(".form #message");
       let checkbox = document.querySelector(".form .checkbox #policy");
+      let nationBox = document.querySelector(".form .nationBox");
       let etcBox = document.querySelector(".form .etcBox");
       let etcBoxInput = document.querySelector(".form .etcBox input");
       let checkValue = "";
@@ -188,6 +189,7 @@
       let checkNationValue;
       nation.addEventListener("change", () => {
         if (nation.value == nationCheck) {
+          nationBox.style.display = "none";
           etcBox.style.display = "block";
           etcBoxInput.addEventListener("change", () => {
             checkNationValue = etcBoxInput.value;
@@ -202,7 +204,25 @@
       Form.addEventListener("submit", (e) => {
         e.preventDefault();
         validateForm();
+      });
 
+      function validateForm(event) {
+        if (username.value == "") {
+          alert("이름이 비어있습니다!");
+          return username.focus();
+        } else if (nation.value == "") {
+          alert("국적이 비어있습니다.");
+          return nation.focus();
+        } else if (contact.value == "") {
+          alert("휴대폰 번호 또는 이메일을 입력해주세요.");
+          return contact.focus();
+        } else if (checkValue == "") {
+          alert("개인정보 동의에 체크해주세요");
+          return false;
+        }
+
+        console.log(username.value, checkNationValue, contact.value, message.value);
+        alert("요청이 접수되었습니다. 안내 페이지로 이동합니다.");
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
@@ -223,28 +243,10 @@
         fetch("http://3.38.166.125:4000", requestOptions)
           .then((response) => {
             response.text();
-            console.log("체크");
           })
           .catch((error) => {
             console.log("error", error);
           });
-      });
-
-      function validateForm(event) {
-        if (username.value == "") {
-          alert("이름이 비어있습니다!");
-          return username.focus();
-        } else if (nation.value == "") {
-          alert("국적이 비어있습니다.");
-          return nation.focus();
-        } else if (contact.value == "") {
-          alert("휴대폰 번호 또는 이메일을 입력해주세요.");
-          return contact.focus();
-        } else if (checkValue == "") {
-          alert("개인정보 동의에 체크해주세요");
-          return false;
-        }
-        alert("요청이 접수되었습니다. 안내 페이지로 이동합니다.");
         window.location.href = "https://mykoreavisa.com/";
       }
     </script>
