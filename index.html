@@ -36,7 +36,7 @@
         };
 
        fetch(
-          `http://whois.kisa.or.kr/openapi/ipascc.jsp?query=${locationCheck}&key=2022030312202739331643&answer=json`,
+          `https://cors-anywhere.herokuapp.com/http://whois.kisa.or.kr/openapi/ipascc.jsp?query=${locationCheck}&key=2022030312202739331643&answer=json`,
           requestOptions
         )
           .then((response) => response.text())
