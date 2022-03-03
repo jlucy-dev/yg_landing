@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="kr">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
@@ -17,8 +17,9 @@
       <img src="../assets/img/Welcome.png" alt="" />
       <div class="blueBox">
         <h1>
-          한국 출입국 및 체류 외국인을 위한<br />
-          <strong>온라인 민원 대행</strong> 서비스
+          <strong>Онлайн-сервис</strong>
+          по административным иммиграционным процедурам для иностранцев.
+
         </h1>
       </div>
     </section>
@@ -27,12 +28,13 @@
     <section id="section2">
       <div class="container">
         <div class="sec2_contents_why">
-          <p class="why_text">
-            한국 출입을 원하는 외국인 및 국내 체류 외국인들을 위한
-            <strong>온라인 민원 대행 서비스</strong>를 제공합니다. 민원별
-            유능한 전문가를 보유 중이며 한국 체류 관련 총 33종의 민원 대행으로
-            구성되어 있습니다.
-            <span>(비자, 체류, 국적, 난민, 외국인 등록, 기타 등)</span>
+          <p class="why_text rus">
+            Мы предоставляем помощь в выполнении административных
+            <strong>иммиграционных процедур онлайн</strong>для иностранцев, желающих въехать в Корею или уже находящихся
+            на ее территории.<br>
+            Наш сервис включает в себя 33 вида административных процедур, по каждой из которых с клиентами работает
+            специализированный специалист
+            <span>(визы, пребывание, гражданство, убежище, регистрация иностранных граждан и др.).</span>
           </p>
         </div>
       </div>
@@ -41,23 +43,23 @@
 
     <section id="section3">
       <div class="container">
-        <h2>어떻게 진행되나요?</h2>
+        <h2>Каким это работает?</h2>
         <div class="sec3_contents">
           <div class="sec3_stepBox">
             <h4>Step 01</h4>
-            <img src="../assets/img/section3_step1.png" alt="" />
+            <img src="../assets/img/step1_rus.png" alt="" />
           </div>
           <div class="sec3_stepBox">
             <h4>Step 02</h4>
-            <img src="../assets/img/section3_step2.png" alt="" />
+            <img src="../assets/img/step2_rus.png" alt="" />
           </div>
           <div class="sec3_stepBox">
             <h4>Step 03</h4>
-            <img src="../assets/img/section3_step3.png" alt="" />
+            <img src="../assets/img/step3_rus.png" alt="" />
           </div>
           <div class="sec3_stepBox">
             <h4>Step 04</h4>
-            <img src="../assets/img/section3_step4.png" alt="" />
+            <img src="../assets/img/step4_rus.png" alt="" />
           </div>
         </div>
       </div>
@@ -65,38 +67,40 @@
     <!-- section3 -->
 
     <section class="formSection">
-      <h2>무엇이든 물어보세요</h2>
-      <p>여러분의 궁금증을 간단하게 해결해드립니다.</p>
+      <h2>Ответы на любые вопросы</h2>
+      <p>Мы всегда готовы ответить на интересующие вас вопросы.
+      </p>
       <form class="form">
         <div class="forminputbox">
-          <input type="text" placeholder="name" id="username" />
+          <input type="text" placeholder="Имя" id="username" />
           <i class="fas fa-user formicon"></i>
         </div>
         <div class="forminputbox">
-          <input type="text" placeholder="nationality" id="nation" />
+          <input type="text" placeholder="Гражданство" id="nation" />
           <i class="fas fa-flag formicon"></i>
         </div>
         <div class="forminputbox">
-          <input type="text" placeholder="Phone or E - Mail" id="contact" />
+          <input type="text" placeholder="ТЕЛ. или E-mail
+          " id="contact" />
           <i class="fas fa-phone-volume formicon"></i>
         </div>
         <div class="forminputbox textarea">
-          <textarea placeholder="message" id="message"></textarea>
+          <textarea placeholder="Сообщение" id="message"></textarea>
           <i class="fas fa-pen formicon last"></i>
         </div>
         <div class="checkBox">
           <input type="checkbox" id="policy" onclick="getCheckboxValue(event)" />
-          <label htmlfor="policy">개인정보수집 및 이용동의</label>
-          <a href="#3">[개인정보처리방침]</a>
+          <label htmlfor="policy">Согласие на сбор и использование личной информации</label><br>
+          <a href="#3">[Руководство по обработке личной информации]</a>
         </div>
-        <button type="submit">제출하기</button>
+        <button type="submit">Подать</button>
       </form>
-      <h2>😄 감사합니다 😄</h2>
+      <h2>😄 Благодарим 😄</h2>
       <!-- 모달 제거 요청 적용
         <div id="modal">
           <div class="modal_box">
-            <h2>상담신청 완료</h2>
-            <a href="https://mykoreavisa.com/">더 알아보기</a>
+            <h2>Заявка на консультацию подана</h2>
+            <a href="https://mykoreavisa.com/">Узнать больше</a>
             <span class="modal_close">X</span>
           </div>
         </div>
@@ -108,31 +112,29 @@
       <div class="container">
         <div class="footerLeft">
           <p>
-            법무법인 영진은 항상 고객의 입장에서 바라보고 생각하는 자세를
-            견지하여 고객과 함께 성장해 나갈 수 있는 로펌이 될 것을 약속
-            드립니다.
+            Нотариальное бюро Youngjin всегда внимательно прислушивается к просьбам клиентов.
+
           </p>
         </div>
-        <div class="footerRight">
+        <div class="footerRight rus">
           <ul>
-            <p>1. 신뢰</p>
+            <p>Доверие клиентов</p>
             <li>
-              법무법인(유) 영진은 고객과의 신뢰를 기반으로 지속적으로
-              성장하겠습니다.
+              залог нашего роста.
             </li>
           </ul>
           <ul>
-            <p>2. 공감</p>
+            <p>Единодушие с клиентом</p>
             <li>
-              법무법인(유) 영진은 고객과 하나되어 서로 이해하고 공감하며
-              나아가겠습니다.
+              основной принцип нашей работы.
+
             </li>
           </ul>
           <ul>
-            <p>3. 전문성</p>
+            <p>Профессионализм</p>
             <li>
-              법무법인(유) 영진은 고객에게 보다 전문화된 VISA 법률 서비스를
-              제공하겠습니다.
+              основное качество, позволяющее нам оказывать специализированную помощь в оформлении виз.
+
             </li>
           </ul>
         </div>
@@ -192,19 +194,19 @@
 
     function validateForm(event) {
       if (username.value == "") {
-        alert("이름이 비어있습니다!");
+        alert("Введите имя.");
         return username.focus();
       } else if (nation.value == "") {
-        alert("국적이 비어있습니다.");
+        alert("Введите национальность.");
         return nation.focus();
       } else if (contact.value == "") {
-        alert("휴대폰 번호 또는 이메일을 입력해주세요.");
+        alert("Введите номер мобильного телефона или электронную почту.");
         return contact.focus();
       } else if (checkValue == "") {
-        alert("개인정보 동의에 체크해주세요");
+        alert("Проверьте, пожалуйста, согласие с личными данными.");
         return false;
       }
-      alert("요청이 접수되었습니다. 잠시 후 안내 페이지로 이동합니다.");
+      alert("Запрос был получен. Через некоторое время перейти к справочной странице.");
       setTimeout(() => {
         window.location.href = "https://mykoreavisa.com/";
       }, 2000);

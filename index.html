@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./assets/style.css" />
-    <link rel="stylesheet" href="./assets/mobile.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
-    />
-    <script type="application/javascript">
-      let locationCheck = false;
-      function getIP(json) {
-        locationCheck = String(json.ip);
-      }
-    </script>
-    <script
-      type="application/javascript"
-      src="https://api.ipify.org?format=jsonp&callback=getIP"
-    ></script>
 
-    <script>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./assets/style.css" />
+  <link rel="stylesheet" href="./assets/mobile.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+  <script type="application/javascript">
+    let locationCheck = false;
+    function getIP(json) {
+      locationCheck = String(json.ip);
+    }
+  </script>
+  <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
+  <script>
       // 코드 변경 예정
       //  window.onload = () => {
       //   var myHeaders = new Headers();
@@ -42,73 +37,46 @@
       //     .then((result) => console.log(result))
       //     .catch((error) => console.log("error", error));
       // };
-    </script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript">
-      var ip = locationCheck;
-      var api_key = "at_3UHJyPFe1xPPhArSUWd7RBvocYeLf";
-      $(function () {
-        $.ajax({
-          url: "https://geo.ipify.org/api/v1",
-          data: { apiKey: api_key, ipAddress: ip },
-          success: function (data) {
-            let location = JSON.stringify(data.location.country);
-            console.log(location);
-            if ((location = "KR")) {
-              window.location.href = "http://3.38.166.125/pages/index_kr.html";
-            }
-            if ((location = "US")) {
-              window.location.href = "http://3.38.166.125/pages/index_usa.html";
-            }
-            if ((location = "VN")) {
-              window.location.href = "http://3.38.166.125/pages/index_vn.html";
-            }
-            if ((location = "RUS")) {
-              window.location.href = "http://3.38.166.125/pages/index_rus.html";
-            }
-          },
-        });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript">
+    var ip = locationCheck;
+    var api_key = "at_3UHJyPFe1xPPhArSUWd7RBvocYeLf";
+    $(function () {
+      $.ajax({
+        url: "https://geo.ipify.org/api/v1",
+        data: { apiKey: api_key, ipAddress: ip },
+        success: function (data) {
+          let location = JSON.stringify(data.location.country).toLowerCase().replace(/\"/gi, "");
+          console.log(location);
+          if (location) {
+            window.location.href = `http://3.38.166.125/pages/index_${location}.html`;
+          }
+        },
       });
-    </script>
-  </head>
+    });
+  </script>
+</head>
 
-  <body>
-    <main class="redirect">
-      <div class="loader loader--style3" title="2">
-        <svg
-          version="1.1"
-          id="loader-1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          x="0px"
-          y="0px"
-          width="100px"
-          height="100px"
-          viewBox="0 0 50 50"
-          style="enable-background: new 0 0 50 50"
-          xml:space="preserve"
-        >
-          <path
-            fill="#000"
-            d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z"
-          >
-            <animateTransform
-              attributeType="xml"
-              attributeName="transform"
-              type="rotate"
-              from="0 25 25"
-              to="360 25 25"
-              dur="1s"
-              repeatCount="indefinite"
-            />
-          </path>
-        </svg>
-      </div>
-      <h1 class="loading">Loading...</h1>
-    </main>
-    <h2>
-      { "whois":{ "query":"202.30.50.0", "queryType":"IPv4", "registry":"KRNIC",
-      "countryCode":"KR" } }
-    </h2>
-  </body>
+<body>
+  <main class="redirect">
+    <div class="loader loader--style3" title="2">
+      <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px" y="0px" width="100px" height="100px" viewBox="0 0 50 50" style="enable-background: new 0 0 50 50"
+        xml:space="preserve">
+        <path fill="#000"
+          d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+          <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25"
+            dur="1s" repeatCount="indefinite" />
+        </path>
+      </svg>
+    </div>
+    <h1 class="loading">Loading...</h1>
+  </main>
+  <h2>
+    { "whois":{ "query":"202.30.50.0", "queryType":"IPv4", "registry":"KRNIC",
+    "countryCode":"KR" } }
+  </h2>
+</body>
+
 </html>

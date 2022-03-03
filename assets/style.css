@@ -39,8 +39,6 @@
   width: 100vw;
 }
 
-
-
 button {
   border: none;
   cursor: pointer;
@@ -225,7 +223,6 @@ textarea {
   font-family: 'GmarketSansMedium';
 }
 
-
 /* footer */
 #footer {
   width: 100%;
@@ -261,7 +258,7 @@ textarea {
 }
 .footerRight ul p {
   color: #fff;
-  flex: 1 1 10%;
+  flex: 1 1 20%;
 }
 .footerRight li {
   list-style: ' - ';
@@ -269,4 +266,31 @@ textarea {
   font-family: 'GmarketSansLight';
   flex: 1 1 70%;
   word-break: keep-all;
+}
+
+/* usa  */
+.why_text.usa span {
+  font-size: 1.9rem;
+  margin-top: 20px;
+}
+
+.footerRight.usa ul p {
+  font-size: 22px;
+  flex: 1 1 25%;
+}
+.footerRight.usa li {
+  font-size: 18px;
+}
+
+/* rus */
+
+.why_text.rus span {
+  font-size: 1.8rem;
+}
+
+.footerRight.rus ul p {
+  flex: 1 1 30%;
+}
+.footerRight.rus li {
+  flex: 1 1 50%;
 }
