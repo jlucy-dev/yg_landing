@@ -16,7 +16,6 @@
       function getIP(json) {
         locationCheck = String(json.ip);
         console.log(locationCheck);
-        handleRedirect();
       }
     </script>
     <script
@@ -28,7 +27,7 @@
       // 코드 변경 예정
        const handleRedirect = () => {
         var myHeaders = new Headers();
-        myHeaders.append("Access-Control-Allow-Origin", " *");
+        myHeaders.append("Access-Control-Allow-Origin", "http://3.38.166.125/");
 
         var requestOptions = {
           method: "GET",
