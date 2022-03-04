@@ -315,12 +315,18 @@
 
   <script>
     const Form = document.querySelector(".form");
+    const policyModal = document.querySelector("#modal");
     let username = document.querySelector(".form #username");
     let nation = document.querySelector(".form #nation");
+    let etcInput = document.querySelector(".form .etc");
     let contact = document.querySelector(".form #contact");
     let message = document.querySelector(".form #message");
     let checkbox = document.querySelector(".form .checkbox #policy");
+    let nationBox = document.querySelector(".form .nationBox");
+    let etcBox = document.querySelector(".form .etcBox");
+    let etcBoxInput = document.querySelector(".form .etcBox input");
     let checkValue = "";
+
 
     function getCheckboxValue(event) {
       if (event.target.checked) {
@@ -336,7 +342,9 @@
     let checkNationValue;
     nation.addEventListener("change", () => {
       if (nation.value == nationCheck) {
+        // 기타국가 선택시 포커스 이동
         etcBox.style.display = "block";
+        etcInput.focus();
         etcBoxInput.addEventListener("change", () => {
           checkNationValue = etcBoxInput.value;
           console.log(checkNationValue);

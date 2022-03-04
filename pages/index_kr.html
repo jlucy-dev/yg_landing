@@ -331,6 +331,7 @@
     let checkNationValue;
     nation.addEventListener("change", () => {
       if (nation.value == nationCheck) {
+        // 기타국가 선택시 포커스 이동
         etcBox.style.display = "block";
         etcInput.focus();
         etcBoxInput.addEventListener("change", () => {
