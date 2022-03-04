@@ -19,34 +19,38 @@
   </script>
   <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 
-  <!-- <script>
-      // 코드 변경 예정
-      const handleRedirect = () => {
-        var myHeaders = new Headers();
-        myHeaders.append("Access-Control-Allow-Origin", "http://3.38.166.125/");
+  <script>
+    
+    // 코드 변경 예정
+    const handleRedirect = () => {
+      var myHeaders = new Headers();
+      myHeaders.append("Access-Control-Allow-Origin", "http://3.38.166.125/");
 
-        var requestOptions = {
-          method: "GET",
-          headers: myHeaders,
-          redirect: "follow",
-        };
+      var requestOptions = {
+        method: "GET",
+        headers: myHeaders,
+        redirect: "follow",
+      };
 
-        fetch(
+      fetch(
           `https://cors-anywhere.herokuapp.com/http://whois.kisa.or.kr/openapi/ipascc.jsp?query=${locationCheck}&key=2022030312202739331643&answer=json`,
           requestOptions
         )
-          .then((response) => response.text())
-          .then((result) => {
-            let nationCode = (Object.values(result)[88] + Object.values(result)[89]).toLowerCase();
-            console.log(nationCode);
-            if(nationCode){
-            window.location.href = `http://3.38.166.125/pages/index_${nationCode}.html`;}
-          })
-          .catch((error) => console.log("error", error));
-      };
-      handleRedirect();
-    </script> -->
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        .then((response) => response.json())
+        .then((result) => {
+          let nationCode = result.whois.countryCode.toLowerCase();
+          console.log(nationCode);
+          if (nationCode) {
+            window.location.href = `http://3.38.166.125/pages/index_${nationCode}.html`;
+          }
+          else {
+            window.location.href = `http://3.38.166.125/pages/index_kr.html`;}
+        })
+        .catch((error) => console.log("error", error));
+    };
+    handleRedirect();
+  </script>
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript">
     var ip = locationCheck;
     var api_key = "at_3UHJyPFe1xPPhArSUWd7RBvocYeLf";
@@ -58,6 +62,7 @@
           ipAddress: ip
         },
         success: function (data) {
+          
           let location = JSON.stringify(data.location.country).toLowerCase().replace(/\"/gi, "");
           console.log(location);
           if (location) {
@@ -68,7 +73,7 @@
         },
       });
     });
-  </script>
+  </script> -->
 </head>
 
 <body>

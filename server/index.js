@@ -1,4 +1,5 @@
 const express = require("express");
+const Exceljs = require("exceljs")
 const app = express();
 const requstip = require("request-ip");
 const cors = require("cors");
@@ -47,3 +48,29 @@ app.get("/check", (req, res) => {
 app.listen(4000, () => {
   console.log("back running");
 });
+
+// setInterval(() => {
+//   var today = new Date();
+//   var year = today.getFullYear();
+//   var month = ("0" + (today.getMonth() + 1)).slice(-2);
+//   var day = ("0" + (today.getDate() - 1)).slice(-2);
+//   var dateString = year + "-" + month + "-" + day;
+
+//   console.log(dateString);
+
+//   function check() {
+//     let sqlDate = `SELECT name, nation, contact, message FROM customer WHERE date LIKE "2022-${month}-${day}%"`;
+//     db.query(sqlDate, (err, rows) => {
+//       if (err) {
+//         console.log(err);
+//       } else {
+//         console.log(rows);
+//         let result = Object.values(JSON.parse(JSON.stringify(rows)));
+//         console.log(result)
+//       }
+//     });
+//   }
+//   check();
+
+
+// }, 2000);
