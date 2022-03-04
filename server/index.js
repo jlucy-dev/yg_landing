@@ -49,28 +49,45 @@ app.listen(4000, () => {
   console.log("back running");
 });
 
-// setInterval(() => {
-//   var today = new Date();
-//   var year = today.getFullYear();
-//   var month = ("0" + (today.getMonth() + 1)).slice(-2);
-//   var day = ("0" + (today.getDate() - 1)).slice(-2);
-//   var dateString = year + "-" + month + "-" + day;
-
-//   console.log(dateString);
-
-//   function check() {
-//     let sqlDate = `SELECT name, nation, contact, message FROM customer WHERE date LIKE "2022-${month}-${day}%"`;
-//     db.query(sqlDate, (err, rows) => {
-//       if (err) {
-//         console.log(err);
-//       } else {
-//         console.log(rows);
-//         let result = Object.values(JSON.parse(JSON.stringify(rows)));
-//         console.log(result)
-//       }
-//     });
-//   }
-//   check();
+setInterval(() => {
+  var today = new Date();
+  var year = today.getFullYear();
+  var month = ("0" + (today.getMonth() + 1)).slice(-2);
+  var day = ("0" + (today.getDate())).slice(-2);
+  var dateString = year + "-" + month + "-" + day;
 
 
-// }, 2000);
+  function check() {
+    let sqlDate = `SELECT name, nation, contact, message, date FROM customer WHERE date LIKE "2022-${month}-${day}%"`;
+    db.query(sqlDate, (err, rows) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(rows);
+        let result = JSON.parse(JSON.stringify(rows));
+        addExcel(result)
+      }
+    });
+  }
+  check();
+
+  function addExcel(event) {
+    const workbook = new Exceljs.Workbook();
+    workbook.creator = "jlucy";
+    const worksheet = workbook.addWorksheet("유저 리스트");
+    worksheet.columns = [
+      {header: '이름', key: 'name'},
+      {header: '국가', key: 'nation'},
+      {header: '연락처', key: 'contact'},
+      {header: '문의내용', key: 'message'},
+      {header: '날짜', key: 'date'},
+    ]
+    const rawData = event;
+    console.log(rawData)
+    rawData.map((data, index)=>{
+      worksheet.addRow(data)
+    })
+    workbook.xlsx.writeFile(`./test.xlsx`);
+  }
+
+}, 360000);

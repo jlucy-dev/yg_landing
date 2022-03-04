@@ -76,11 +76,11 @@
           <input list="nationlist" placeholder="nationality" id="nation" autocomplete="off" />
           <i class="fas fa-flag formicon"></i>
         </div>
-        <datalist id="nationlist" style="width: 100vw">
-          <option value="KOREA" style="width: 100vw"></option>
-          <option value="US"></option>
-          <option value="RS"></option>
-          <option value="VN"></option>
+        <datalist id="nationlist">
+          <option value="KOREA"></option>
+          <option value="USA"></option>
+          <option value="RUSSIA"></option>
+          <option value="VIETNAM"></option>
           <option value="etc..."></option>
         </datalist>
         <div class="forminputbox etcBox" style="display: none">
@@ -153,7 +153,6 @@
               <p class="policy_text">첫째, 이용자들이 제공한 개인정보를 바탕으로 보다 더 유용한 서비스를 개발할 수 있습니다. “법인”은 신규 서비스개발이나 컨텐츠의 확충 시에 기존
                 이용자들이 “법인”에 제공한 개인정보를
                 바탕으로 개발해야 할 서비스의 우선 순위를 보다 더 효율적으로 정하고, “법인”은 이용자들이 필요로 할 컨텐츠를 합리적으로 선택하여 제공할 수 있습니다.
-
               </p><br />
               <p class="policy_text">둘째, “법인”이 제공하는 각종 정보 및 서비스 등은 대부분 무료입니다. “법인” 이러한 무료 서비스를 제공하기 위해서 광고를 게재할 수 있는데,
                 이용자에 대한 정확한 개인정보를
@@ -163,7 +162,7 @@
               <p class="policy_text">
                 셋째, 각 정보별 수집 목적은 다음과 같습니다.</p>
               <ol class="policy_list">
-                <li>성명, 주민등록번호, ID(고유번호), Password(비밀번호) : 서비스이용에 따른 본인식별 </li>
+                <li>성명, 국적, 연락처 : 서비스이용에 따른 본인식별 </li>
                 <li>e-mail, 전화번호, 핸드폰번호: 공지사항 전달, 본인의사확인, 불만처리 등 원활한 의사소통 경로의 확보, 새로운 서비스나 신상품, 이벤트 정보 등 최신정보의 안내 </li>
                 <li>은행계좌정보, 신용카드정보, 핸드폰번호, 전화번호: 유료정보이용에 대한 요금결제 </li>
                 <li>주소, 전화번호, 핸드폰번호: 청구서, 물품배송시 정확한 배송지의 확보</li>
@@ -175,10 +174,8 @@
               <h4>개인정보 항목 및 수집방법</h4><br />
               <p class="policy_text">“법인”은 이용자가 회원서비스를 이용하기 위해 회원으로 가입하실 때 서비스 제공을 위한 필수적인 정보들을 온라인상에서 입력 받고 있습니다. 회원
                 가입시에 받는 필수적인 정보는 이름, 주민등록번호(외국인등록증), e-mail, 주소, 전화번호 등입니다.
-
                 또한 양질의 서비스 제공을 위하여 이용자가 선택적으로 입력할 수 있는 사항으로서 관심사항, 직업, “법인”이 관심사항 등을 입력 받고 있습니다. </p>
             </p>
-
             <p class="policy_text">
               <h4>개인정보 보유 및 이용기간</h4>
               <p class="policy_text">“법인”의 회원이 자신의 개인정보 열람, 수정 및 삭제 절차에 따라 ID를 삭제하거나 가입 해지를 요청한 경우에 수집된 개인의 정보는 재생할 수 없는
@@ -371,6 +368,7 @@
         contact.value,
         message.value
       );
+
       alert("요청이 접수되었습니다. 안내 페이지로 이동합니다.");
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
