@@ -333,7 +333,6 @@
     let checkNationValue;
     nation.addEventListener("change", () => {
       if (nation.value == nationCheck) {
-        nationBox.style.display = "none";
         etcBox.style.display = "block";
         etcBoxInput.addEventListener("change", () => {
           checkNationValue = etcBoxInput.value;
