@@ -1,5 +1,6 @@
 const express = require("express");
-const Exceljs = require("exceljs")
+const Exceljs = require("exceljs");
+const nodemailer = require("nodemailer");
 const app = express();
 const requstip = require("request-ip");
 const cors = require("cors");
@@ -50,45 +51,92 @@ app.listen(4000, () => {
   console.log("back running");
 });
 
-// setInterval(() => {
-//   var today = new Date();
-//   var year = today.getFullYear();
-//   var month = ("0" + (today.getMonth() + 1)).slice(-2);
-//   var day = ("0" + (today.getDate()-1)).slice(-2);
-//   var dateString = year + "-" + month + "-" + day;
+
+// 시간 정보
+var today = new Date();
+var year = today.getFullYear();
+var month = ("0" + (today.getMonth() + 1)).slice(-2);
+var day = ("0" + (today.getDate() - 1)).slice(-2);
+var dateString = year + "-" + month + "-" + day;
 
 
-//   function check() {
-//     let sqlDate = `SELECT name, nation, contact, message, date FROM customer WHERE date LIKE "2022-${month}-${day}%"`;
-//     db.query(sqlDate, (err, rows) => {
-//       if (err) {
-//         console.log(err);
-//       } else {
-//         console.log(rows);
-//         let result = JSON.parse(JSON.stringify(rows));
-//         addExcel(result)
-//       }
-//     });
-//   }
-//   check();
+// 메일 보내기
+const transporter = nodemailer.createTransport({
+  host: 'smtp.gmail.com',
+  port: 465,
+  secure: true, // use SSL
+  auth: {
+    user: 'jiny0360@gmail.com',
+    pass: '364852aa!'
+  }
+});
 
-//   function addExcel(event) {
-//     const workbook = new Exceljs.Workbook();
-//     workbook.creator = "jlucy";
-//     const worksheet = workbook.addWorksheet("유저 리스트");
-//     worksheet.columns = [
-//       {header: '이름', key: 'name'},
-//       {header: '국가', key: 'nation'},
-//       {header: '연락처', key: 'contact'},
-//       {header: '문의내용', key: 'message'},
-//       {header: '날짜', key: 'date'},
-//     ]
-//     const rawData = event;
-//     console.log(rawData)
-//     rawData.map((data, index)=>{
-//       worksheet.addRow(data)
-//     })
-//     workbook.xlsx.writeFile(`./test.xlsx`);
-//   }
+const mailOptions = {
+  from: "jiny0360@gmail.com",
+  to: "jiny_park@jlucy.co.kr",
+  subject: "Hello",
+  text: "영진 랜딩페이지",
+  attachments: [{
+    filename: `user_info_${day}.xlsx`,
+    path: `user_info_${day}.xlsx`
+  }]
+}
 
-// }, 360000);
+setInterval(() => {
+  function check() {
+    let sqlDate = `SELECT name, nation, contact, message, date FROM customer WHERE date LIKE "2022-${month}-${day}%"`;
+    db.query(sqlDate, (err, rows) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(rows);
+        let result = JSON.parse(JSON.stringify(rows));
+        addExcel(result)
+      }
+    });
+  }
+  check();
+
+  function addExcel(event) {
+    console.log(`Sending Day info ${month}-${day}`)
+    const workbook = new Exceljs.Workbook();
+    workbook.creator = "jlucy";
+    const worksheet = workbook.addWorksheet("유저 리스트");
+    worksheet.columns = [{
+        header: '이름',
+        key: 'name'
+      },
+      {
+        header: '국가',
+        key: 'nation'
+      },
+      {
+        header: '연락처',
+        key: 'contact'
+      },
+      {
+        header: '문의내용',
+        key: 'message'
+      },
+      {
+        header: '날짜',
+        key: 'date'
+      },
+    ]
+    const rawData = event;
+    console.log(rawData)
+    rawData.map((data, index) => {
+      worksheet.addRow(data)
+    })
+    workbook.xlsx.writeFile(`./user_info_${day}.xlsx`);
+    transporter.sendMail(mailOptions, (err, info) => {
+      if (err) {
+        console.log("error message" + err)
+      } else {
+        console.log("message send!" + info.response)
+      }
+      transporter.close();
+    })
+  }
+
+}, 43200000);
