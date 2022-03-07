@@ -15,64 +15,61 @@
     function getIP(json) {
       locationCheck = String(json.ip);
       console.log(locationCheck);
+      handleRedirect();
     }
+    const handleRedirect = () => {
+      var myHeaders = new Headers();
+      myHeaders.append("Access-Control-Allow-Origin", "http://whois.kisa.or.kr");
+
+      var requestOptions = {
+        method: "GET",
+        headers: myHeaders,
+        redirect: "follow",
+      };
+
+      fetch(
+          `http://whois.kisa.or.kr/openapi/ipascc.jsp?query=${locationCheck}&key=2022030312202739331643&answer=json`,
+          requestOptions
+        )
+        .then((response) => response.json())
+        .then((result) => {
+          let nationCode = result.whois.countryCode.toLowerCase();
+          console.log(nationCode);
+          if (nationCode) {
+            window.location.href = `http://3.38.166.125/pages/index_${nationCode}.html`;
+          }
+          else {
+            window.location.href = `http://3.38.166.125/pages/index_kr.html`;}
+        })
+        .catch((error) => console.log("error", error));
+    };
   </script>
   <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 
-  <script>
-    
-    // 코드 변경 예정
-    // const handleRedirect = () => {
-    //   var myHeaders = new Headers();
-    //   myHeaders.append("Access-Control-Allow-Origin", "http://3.38.166.125/");
 
-    //   var requestOptions = {
-    //     method: "GET",
-    //     headers: myHeaders,
-    //     redirect: "follow",
-    //   };
-
-    //   fetch(
-    //       `https://cors-anywhere.herokuapp.com/http://whois.kisa.or.kr/openapi/ipascc.jsp?query=${locationCheck}&key=2022030312202739331643&answer=json`,
-    //       requestOptions
-    //     )
-    //     .then((response) => response.json())
-    //     .then((result) => {
-    //       let nationCode = result.whois.countryCode.toLowerCase();
-    //       console.log(nationCode);
-    //       if (nationCode) {
-    //         window.location.href = `http://3.38.166.125/pages/index_${nationCode}.html`;
-    //       }
-    //       else {
-    //         window.location.href = `http://3.38.166.125/pages/index_kr.html`;}
-    //     })
-    //     .catch((error) => console.log("error", error));
-    // };
-    // handleRedirect();
-  </script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript">
-    var ip = locationCheck;
-    var api_key = "at_3UHJyPFe1xPPhArSUWd7RBvocYeLf";
-    $(function () {
-      $.ajax({
-        url: "https://geo.ipify.org/api/v1",
-        data: {
-          apiKey: api_key,
-          ipAddress: ip
-        },
-        success: function (data) {
-          
-          let location = JSON.stringify(data.location.country).toLowerCase().replace(/\"/gi, "");
-          console.log(location);
-          if (location) {
-            window.location.href = `http://3.38.166.125/pages/index_${location}.html`;
-          } else {
-            window.location.href = `http://3.38.166.125/pages/index_kr.html`;
-          }
-        },
-      });
-    });
+    // var ip = locationCheck;
+    // var api_key = "at_3UHJyPFe1xPPhArSUWd7RBvocYeLf";
+    // $(function () {
+    //   $.ajax({
+    //     url: "https://geo.ipify.org/api/v1",
+    //     data: {
+    //       apiKey: api_key,
+    //       ipAddress: ip
+    //     },
+    //     success: function (data) {
+
+    //       let location = JSON.stringify(data.location.country).toLowerCase().replace(/\"/gi, "");
+    //       console.log(location);
+    //       if (location) {
+    //         window.location.href = `http://3.38.166.125/pages/index_${location}.html`;
+    //       } else {
+    //         window.location.href = `http://3.38.166.125/pages/index_kr.html`;
+    //       }
+    //     },
+    //   });
+    // });
   </script>
 </head>
 
