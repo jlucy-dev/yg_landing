@@ -305,10 +305,17 @@ textarea {
 .section5Right ul {
   font-size: 1.5rem;
   margin: 15px 0;
+  display: flex;
 }
 .section5Right ul p {
   color: #fff;
   margin-right: 20px;
+  flex: 1;
+}
+
+.line {
+  color: #fff;
+  margin-right: 10px;
 }
 
 .section5Right li {
@@ -316,6 +323,8 @@ textarea {
   word-break: keep-all;
   color: #fff;
   list-style: none;
+  text-align: left;
+  flex: 8;
 }
 
 /* footer */
