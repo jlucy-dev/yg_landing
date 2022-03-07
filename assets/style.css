@@ -318,6 +318,20 @@ textarea {
   list-style: none;
 }
 
+/* footer */
+#footer {
+  background: #000;
+  text-align: center;
+}
+.footerContents {
+  padding: 70px 0;
+}
+
+#footer p {
+  color: lightgrey;
+  margin: 5px 0;
+}
+
 /* usa  */
 .why_text.usa span {
   font-size: 1.9rem;
