@@ -311,6 +311,7 @@ textarea {
   color: #fff;
   margin-right: 20px;
   flex: 1;
+  white-space: nowrap;
 }
 
 .line {
