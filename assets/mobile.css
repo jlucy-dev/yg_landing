@@ -170,4 +170,26 @@
         word-break: keep-all;
     }
 
+    /* modal */
+
+
+    #modal .modal_box {
+        width: 80%;
+    }
+
+    .modal_box h2 {
+        padding: 20px 0px;
+        margin: 0;
+        font-size: 20px;
+    }
+
+    .modal_box .text_box {
+        width: 90%;
+    }
+
+
+
+    .modal_box .close {
+        width: 30%;
+    }
 }

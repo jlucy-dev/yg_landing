@@ -440,7 +440,9 @@
     // 개인정보처리방침 모달창
     function handlePolicyBox(event) {
       modal.style.display = `${event}`;
-      console.log(modal.style.display)
+      //모달창 열었을 때 바닥 스크롤 막기
+      document.querySelector('body').classList.toggle('modal_open')
+
     }
   </script>
 </body>

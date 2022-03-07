@@ -444,6 +444,13 @@
 
       window.location.href = "https://mykoreavisa.com/";
     }
+
+    function handlePolicyBox(event) {
+      modal.style.display = `${event}`;
+      //모달창 열었을 때 바닥 스크롤 막기
+      document.querySelector('body').classList.toggle('modal_open')
+
+    }
   </script>
 </body>
 
