@@ -17,59 +17,82 @@
       console.log(locationCheck);
       handleRedirect();
     }
-    const handleRedirect = () => {
-      var myHeaders = new Headers();
-      myHeaders.append("Access-Control-Allow-Origin", "http://whois.kisa.or.kr");
+  </script>
+  <script>
+    // const handleRedirect = () => {
+    //   var myHeaders = new Headers();
+    //   myHeaders.append("Access-Control-Allow-Origin", "*");
 
-      var requestOptions = {
-        method: "GET",
-        headers: myHeaders,
-        redirect: "follow",
-      };
+    //   var requestOptions = {
+    //     method: 'GET',
+    //     headers: myHeaders,
+    //     redirect: 'follow'
+    //   };
 
-      fetch(
-          `http://whois.kisa.or.kr/openapi/ipascc.jsp?query=${locationCheck}&key=2022030312202739331643&answer=json`,
-          requestOptions
-        )
-        .then((response) => response.json())
-        .then((result) => {
-          let nationCode = result.whois.countryCode.toLowerCase();
-          console.log(nationCode);
-          if (nationCode) {
-            window.location.href = `http://3.38.166.125/pages/index_${nationCode}.html`;
-          }
-          else {
-            window.location.href = `http://3.38.166.125/pages/index_kr.html`;}
-        })
-        .catch((error) => console.log("error", error));
-    };
+    //   fetch("http://localhost:4000/cors", requestOptions)
+    //     .then(response => response)
+    //     .then(result => console.log(result))
+    //     .catch(error => console.log('error', error));
+    // }
+
+
+    // const handleRedirect = () => {
+    //   var myHeaders = new Headers();
+    //   myHeaders.append(
+    //     "Access-Control-Allow-Headers", "Content-Type",
+    //     "Access-Control-Allow-Origin", "*",
+    //     "Access-Control-Allow-Methods", "OPTIONS,POST,GET");
+
+    //   var requestOptions = {
+    //     method: "GET",
+    //     headers: myHeaders,
+    //     redirect: "follow",
+    //   };
+
+    //   fetch(
+    //       `http://whois.kisa.or.kr/openapi/ipascc.jsp?query=${locationCheck}&key=2022030312202739331643&answer=json`,
+    //       requestOptions
+    //     )
+    //     .then((response) => response.json())
+    //     .then((result) => {
+    //       let nationCode = result.whois.countryCode.toLowerCase();
+    //       console.log(nationCode);
+    //       if (nationCode) {
+    //         window.location.href = `http://3.38.166.125/pages/index_${nationCode}.html`;
+    //       } else {
+    //         window.location.href = `http://3.38.166.125/pages/index_kr.html`;
+    //       }
+    //     })
+    //     .catch((error) => console.log("error", error));
+    // };
+    // handleRedirect();
   </script>
   <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript">
-    // var ip = locationCheck;
-    // var api_key = "at_3UHJyPFe1xPPhArSUWd7RBvocYeLf";
-    // $(function () {
-    //   $.ajax({
-    //     url: "https://geo.ipify.org/api/v1",
-    //     data: {
-    //       apiKey: api_key,
-    //       ipAddress: ip
-    //     },
-    //     success: function (data) {
+    var ip = locationCheck;
+    var api_key = "at_3UHJyPFe1xPPhArSUWd7RBvocYeLf";
+    $(function () {
+      $.ajax({
+        url: "https://geo.ipify.org/api/v1",
+        data: {
+          apiKey: api_key,
+          ipAddress: ip
+        },
+        success: function (data) {
 
-    //       let location = JSON.stringify(data.location.country).toLowerCase().replace(/\"/gi, "");
-    //       console.log(location);
-    //       if (location) {
-    //         window.location.href = `http://3.38.166.125/pages/index_${location}.html`;
-    //       } else {
-    //         window.location.href = `http://3.38.166.125/pages/index_kr.html`;
-    //       }
-    //     },
-    //   });
-    // });
+          let location = JSON.stringify(data.location.country).toLowerCase().replace(/\"/gi, "");
+          console.log(location);
+          if (location) {
+            window.location.href = `http://3.38.166.125/pages/index_${location}.html`;
+          } else {
+            window.location.href = `http://3.38.166.125/pages/index_kr.html`;
+          }
+        },
+      });
+    });
   </script>
 </head>
 
