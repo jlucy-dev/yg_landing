@@ -39,6 +39,11 @@
   width: 100vw;
 }
 
+/*  */
+body.modal_open {
+  overflow: hidden;
+}
+
 button {
   border: none;
   cursor: pointer;
