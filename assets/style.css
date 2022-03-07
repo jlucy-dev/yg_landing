@@ -9,22 +9,21 @@
 /* FONT */
 @font-face {
   font-family: 'GmarketSansBold';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff')
-    format('woff');
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'GmarketSansMedium';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
-    format('woff');
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'GmarketSansLight';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff')
-    format('woff');
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -44,24 +43,34 @@ body.modal_open {
   overflow: hidden;
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 button {
   border: none;
   cursor: pointer;
 }
+
 .container {
   width: 80%;
   margin: 0 auto;
 }
+
 h2 {
   font-family: 'GmarketSansBold';
   margin: 100px 0;
   font-size: 4rem;
   text-align: center;
 }
+
 input {
   padding: 20px;
   font-family: 'GmarketSansMedium';
 }
+
 textarea {
   width: 100%;
   height: 200px;
@@ -73,6 +82,7 @@ textarea {
 #section1 {
   width: 100%;
 }
+
 #section1 img {
   width: 100%;
 }
@@ -86,12 +96,14 @@ textarea {
   flex-direction: column;
   justify-content: center;
 }
+
 .blueBox h1 {
   font-family: 'GmarketSansBold';
   color: #fff;
   font-size: 5rem;
   text-align: center;
 }
+
 .blueBox strong {
   color: #00aefe;
   font-family: 'GmarketSansBold';
@@ -101,6 +113,7 @@ textarea {
 #section2 {
   margin-top: 100px;
 }
+
 #section2 .container {
   display: flex;
   flex-direction: column;
@@ -108,6 +121,7 @@ textarea {
   align-items: center;
   text-align: center;
 }
+
 .sec2_contents_why {
   margin: 100px 0;
 }
@@ -117,10 +131,12 @@ textarea {
   font-size: 2rem;
   word-break: keep-all;
 }
+
 .why_text strong {
   color: #00aefe;
   font-weight: normal;
 }
+
 .why_text span {
   display: block;
   color: #7777;
@@ -130,15 +146,18 @@ textarea {
 #section3 {
   margin-top: 100px;
 }
+
 #section3 .container {
   display: flex;
   flex-direction: column;
   text-align: center;
 }
+
 .sec3_contents {
   display: flex;
   justify-content: space-around;
 }
+
 .sec3_contents h4 {
   color: #00aefe;
   font-family: 'GmarketSansBold';
@@ -150,6 +169,7 @@ textarea {
 .formSection h2 {
   margin-bottom: 20px;
 }
+
 .formSection p {
   text-align: center;
   font-family: 'GmarketSansMedium';
@@ -160,6 +180,7 @@ textarea {
 .formSection {
   margin-bottom: 100px;
 }
+
 .form {
   margin: 0 auto;
   margin-top: 100px;
@@ -175,10 +196,12 @@ textarea {
   padding-left: 66px;
   font-size: 1.5rem;
 }
+
 .forminputbox {
   width: 100%;
   position: relative;
 }
+
 .form textarea {
   margin-top: 20px;
   padding-left: 66px;
@@ -194,21 +217,26 @@ textarea {
   left: 3%;
   color: #696969;
 }
+
 .formicon.last {
   top: 20%;
 }
+
 /* checkbox */
 .checkBox {
   margin: 20px 0;
   font-size: 1.2rem;
 }
+
 .checkBox a {
   text-decoration: none;
   font-family: 'GmarketSansBold';
 }
+
 .cursorPoint {
   cursor: pointer;
 }
+
 #modal {
   display: none;
   position: fixed;
@@ -230,6 +258,7 @@ textarea {
   border: 1px solid #000;
   border-radius: 20px;
 }
+
 .modal_box h2 {
   padding: 20px 0px;
   margin: 0;
@@ -244,6 +273,7 @@ textarea {
   padding: 10px;
   overflow: scroll;
 }
+
 .modal_box .text_box h4 {
   text-align: left;
   font-weight: bold;
@@ -285,15 +315,18 @@ textarea {
   background: #2f2a6a;
   padding: 100px 0;
 }
+
 #section5 .container {
   width: 90%;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
+
 .section5Left {
   width: 30%;
 }
+
 .section5Left p {
   font-family: 'GmarketSansLight';
   font-size: 2rem;
@@ -301,17 +334,21 @@ textarea {
   color: #fff;
   line-height: 3.5rem;
 }
+
 .section5Left strong {
   color: #fff;
 }
+
 .section5Right {
   width: 50%;
 }
+
 .section5Right ul {
   font-size: 1.5rem;
   margin: 15px 0;
   display: flex;
 }
+
 .section5Right ul p {
   color: #fff;
   margin-right: 20px;
@@ -338,6 +375,7 @@ textarea {
   background: #000;
   text-align: center;
 }
+
 .footerContents {
   padding: 70px 0;
 }
@@ -352,6 +390,7 @@ textarea {
   background: #000;
   text-align: center;
 }
+
 .footerContents {
   padding: 70px 0;
 }
@@ -371,6 +410,7 @@ textarea {
   font-size: 22px;
   flex: 1 1 25%;
 }
+
 .footerRight.usa li {
   font-size: 18px;
 }
@@ -384,6 +424,7 @@ textarea {
 .footerRight.rus ul p {
   flex: 1 1 30%;
 }
+
 .footerRight.rus li {
   flex: 1 1 50%;
 }
