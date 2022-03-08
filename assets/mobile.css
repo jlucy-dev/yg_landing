@@ -12,6 +12,14 @@
     width: 100px;
   }
 
+  /* form */
+  .form {
+    width: 60%;
+  }
+  .form input:not(.checkBox input) {
+    font-size: 1.2rem;
+  }
+
   /* img */
   .sec3_contents {
     grid-template-columns: repeat(2, 1fr);
