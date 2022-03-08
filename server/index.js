@@ -63,86 +63,58 @@ var month = ("0" + (today.getMonth() + 1)).slice(-2);
 var day = ("0" + (today.getDate() - 1)).slice(-2);
 var dateString = year + "-" + month + "-" + day;
 
-// 메일 보내기
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true, // use SSL
-  auth: {
-    user: "jiny0360@gmail.com",
-    pass: "364852aa!",
-  },
-});
 
-const mailOptions = {
-  from: "jiny0360@gmail.com",
-  to: "jiny_park@jlucy.co.kr",
-  subject: "Hello",
-  text: "영진 랜딩페이지",
-  attachments: [{
-    filename: `user_info_${day}.xlsx`,
-    path: `user_info_${day}.xlsx`,
-  }, ],
-};
+setInterval(() => {
+  function check() {
+    let sqlDate = `SELECT name, nation, contact, message, date FROM customer WHERE date LIKE "2022-${month}-${day}%"`;
+    db.query(sqlDate, (err, rows) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(rows);
+        let result = JSON.parse(JSON.stringify(rows));
+        addExcel(result)
+      }
+    });
+  }
+  check();
 
-// setInterval(() => {
-//   function check() {
-//     let sqlDate = `SELECT name, nation, contact, message, date FROM customer WHERE date LIKE "2022-${month}-${day}%"`;
-//     db.query(sqlDate, (err, rows) => {
-//       if (err) {
-//         console.log(err);
-//       } else {
-//         console.log(rows);
-//         let result = JSON.parse(JSON.stringify(rows));
-//         addExcel(result)
-//       }
-//     });
-//   }
-//   check();
+  function addExcel(event) {
+    console.log(`Sending Day info ${month}-${day}`)
+    const workbook = new Exceljs.Workbook();
+    workbook.creator = "jlucy";
+    const worksheet = workbook.addWorksheet("유저 리스트");
+    worksheet.columns = [{
+        header: '이름',
+        key: 'name'
+      },
+      {
+        header: '국가',
+        key: 'nation'
+      },
+      {
+        header: '연락처',
+        key: 'contact'
+      },
+      {
+        header: '문의내용',
+        key: 'message'
+      },
+      {
+        header: '날짜',
+        key: 'date'
+      },
+    ]
+    const rawData = event;
+    console.log(rawData)
+    rawData.map((data, index) => {
+      worksheet.addRow(data)
+    })
+    workbook.xlsx.writeFile(`./user_info_${day}.xlsx`);
+    sendMail().then(result => console.log("email send!", result)).catch(err => console.log(err))
+  }
 
-//   function addExcel(event) {
-//     console.log(`Sending Day info ${month}-${day}`)
-//     const workbook = new Exceljs.Workbook();
-//     workbook.creator = "jlucy";
-//     const worksheet = workbook.addWorksheet("유저 리스트");
-//     worksheet.columns = [{
-//         header: '이름',
-//         key: 'name'
-//       },
-//       {
-//         header: '국가',
-//         key: 'nation'
-//       },
-//       {
-//         header: '연락처',
-//         key: 'contact'
-//       },
-//       {
-//         header: '문의내용',
-//         key: 'message'
-//       },
-//       {
-//         header: '날짜',
-//         key: 'date'
-//       },
-//     ]
-//     const rawData = event;
-//     console.log(rawData)
-//     rawData.map((data, index) => {
-//       worksheet.addRow(data)
-//     })
-//     workbook.xlsx.writeFile(`./user_info_${day}.xlsx`);
-//     transporter.sendMail(mailOptions, (err, info) => {
-//       if (err) {
-//         console.log("error message" + err)
-//       } else {
-//         console.log("message send!" + info.response)
-//       }
-//       transporter.close();
-//     })
-//   }
-
-// }, 43200000);
+}, 21600000);
 
 
 const CLIENT_ID = "152091840997-46ttjh8jig1ususmslujek17lsa3rpfd.apps.googleusercontent.com";
@@ -175,8 +147,9 @@ async function sendMail() {
     })
     const mailOptions = {
       from: "jiny_park@jlucy.co.kr",
-      to: "jiny0360@gmail.com, jiny3360@naver.com", 
-      subject: "HELLO from gmail using api!",
+      to: "jiny0360@gmail.com, jiny3360@naver.com",
+      subject: `${day}일차 DB자료 보내드립니다.`,
+      text: "제이루시 담당자입니다. DB자료 보내드립니다. 이상 시 문의 주시면 조속한 조치를 하도록 하겠습니다.",
       attachments: [{
         filename: `user_info_${day}.xlsx`,
         path: `user_info_${day}.xlsx`,
@@ -189,5 +162,3 @@ async function sendMail() {
     return error
   }
 }
-
-sendMail().then(result => console.log("email send!", result)).catch(err => console.log(err))
