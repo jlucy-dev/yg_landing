@@ -61,7 +61,7 @@ button {
 
 h2 {
   font-family: 'GmarketSansBold';
-  margin: 100px 0;
+  margin-top: 50px;
   font-size: 4rem;
   text-align: center;
 }
@@ -147,6 +147,10 @@ textarea {
   margin-top: 100px;
 }
 
+#section3 h2 {
+  margin-top: 0;
+}
+
 #section3 .container {
   display: flex;
   flex-direction: column;
@@ -178,7 +182,7 @@ textarea {
 
 /* 문의하기 폼 스타일링 */
 .formSection {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .form {
@@ -309,7 +313,7 @@ textarea {
   font-family: 'GmarketSansMedium';
 }
 
-.section5Left  { 
+.section5Left {
   width: 70%;
 }
 
@@ -369,6 +373,7 @@ textarea {
   width: 1px;
   height: 100px;
 }
+
 #footer .section5 {
   display: flex;
   flex-direction: column;

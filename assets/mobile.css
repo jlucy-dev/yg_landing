@@ -91,7 +91,7 @@
 
     /* 문의하기 폼 스타일링 */
     .formSection {
-        margin-bottom: 100px;
+        margin-bottom: 0;
     }
 
     .formSection h2 {
@@ -118,6 +118,10 @@
     }
 
     /* checkbox */
+
+    #footer .section5 {
+        display: none;
+    }
 
     .section5Left {
         width: 70%;
@@ -163,14 +167,14 @@
     }
 
     .footerLine {
-        border: 1px solid lightgray;
-        width: 50px;
-        height: 1px;
+        display: none;
     }
 
 
     .footerContents {
         padding: 30px;
+        width: 90%;
+        margin: 0 auto;
         text-align: center;
         font-size: 10px;
     }
@@ -179,6 +183,9 @@
         color: lightgrey;
     }
 
+    h2 {
+        margin-top: 20px;
+    }
 
     /* modal */
 
