@@ -32,9 +32,12 @@
       $.getJSON(url, function (data) {
         let nationCode = data.countryCode.toLowerCase();
         if (nationCode) {
-          window.location.href = `http://3.38.166.125/pages/index_${nationCode}.html`;
-        } else {
-          window.location.href = `http://3.38.166.125/pages/index_kr.html`;
+          if (nationCode == "us" || nationCode == "ru" || nationCode == "vn") {
+            window.location.href = `http://3.38.166.125/pages/index_${nationCode}.html`;
+          } else {
+            window.location.href = `http://3.38.166.125/pages/index_kr.html`;
+
+          }
         }
       })
     }
