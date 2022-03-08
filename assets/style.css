@@ -110,6 +110,7 @@ textarea {
   color: #fff;
   font-size: 5rem;
   text-align: center;
+  word-break: keep-all;
 }
 
 .blueBox strong {
@@ -136,7 +137,7 @@ textarea {
 
 .why_text {
   font-family: 'GmarketSansMedium';
-  font-size: 2rem;
+  font-size: 1.5rem;
   word-break: keep-all;
 }
 
@@ -379,6 +380,7 @@ textarea {
   word-break: keep-all;
   color: #fff;
   list-style: none;
+  font-size: 10px;
 }
 
 /* footer */
@@ -387,11 +389,13 @@ textarea {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-top: 100px;
 }
 
 #footer .footercontainer {
   margin: 0 auto;
   text-align: center;
+  flex: 1;
 }
 
 .footerLine {
@@ -405,6 +409,8 @@ textarea {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 30px;
+  flex: 1;
 }
 
 .footerContents {
@@ -414,6 +420,7 @@ textarea {
 
 #footer p {
   color: lightgrey;
+  font-size: 10px;
 }
 
 /* usa  */

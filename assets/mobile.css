@@ -18,12 +18,23 @@
     column-gap: 20px;
     row-gap: 30px;
   }
+
+  /* footer */
+  .section5Left p {
+    font-size: 14px;
+  }
+  .section5Right p {
+    font-size: 14px;
+  }
+  .section5Right li {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 768px) {
   /* common */
   .container {
-    width: 100%;
+    width: 95%;
   }
 
   /* section1 */
@@ -33,7 +44,7 @@
 
   .blueBox {
     width: 100%;
-    height: 150px;
+    height: 200px;
   }
 
   .blueBox h1 {
@@ -45,11 +56,6 @@
 
   #section2 {
     margin-top: 20px;
-  }
-
-  .sec2_contents_why {
-    margin-top: 50px;
-    margin-bottom: 0;
   }
 
   .why_text {
@@ -68,14 +74,17 @@
   #section3 {
     margin-top: 20px;
   }
+  #section3 .container {
+    width: 95%;
+  }
 
   #section3 h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .sec3_contents {
     grid-template-columns: 1fr 1fr;
-    /* flex-direction: column; */
+    flex-direction: column;
   }
 
   .sec3_contents h4 {
@@ -95,9 +104,6 @@
   }
 
   /* form section */
-  .formSection h2 {
-    margin-bottom: 20px;
-  }
 
   .formSection p {
     text-align: center;
@@ -111,7 +117,8 @@
   }
 
   .formSection h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
   }
 
   .formSection > p {
@@ -219,5 +226,20 @@
 
   .modal_box .close {
     width: 30%;
+  }
+}
+
+@media (max-width: 320px) {
+  :root {
+    font-size: 11px;
+  }
+  .footerContents {
+    width: 100%;
+  }
+  .blueBox h1 {
+    font-size: 2rem;
+  }
+  .blueBox h1 strong {
+    display: block;
   }
 }
