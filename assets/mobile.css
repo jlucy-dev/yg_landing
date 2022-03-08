@@ -119,6 +119,41 @@
 
     /* checkbox */
 
+    #section5 {
+        width: 100%;
+        background: #2f2a6a;
+        padding: 50px 0;
+    }
+
+    #section5 .container {
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .section5Left {
+        width: 100%;
+        text-align: center;
+    }
+
+    .section5Left p {
+        font-family: 'GmarketSansLight';
+        font-size: 1.2rem;
+        color: #fff;
+        line-height: 1.5;
+    }
+
+    .section5Right {
+        width: 90%;
+    }
+
+    .section5Right ul {
+        font-size: 1rem;
+    }
+
+    .section5Right ul p {
+        flex: 1.5;
+        width: 15%;
+    }
 
     /* footer */
     #footer {
