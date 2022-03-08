@@ -2,19 +2,19 @@ const express = require("express");
 const Exceljs = require("exceljs");
 const nodemailer = require("nodemailer");
 const app = express();
-const requstip = require("request-ip");
 const cors = require("cors");
 const mysql = require("mysql");
 
 let corsOptions = {
-  origin : 'http://localhost:5500',
+  origin: '*',
   credentials: true,
 }
 
 app.use(cors(corsOptions));
 app.use(express.json());
 
-
+let ip = requestip.getClientIp();
+console.log(ip)
 
 const db = mysql.createConnection({
   user: "yg_admin",
@@ -45,41 +45,10 @@ app.post("/", (req, res) => {
 });
 
 
+
+
+
 // 아이피 주소 받아오기 IPv6
-// app.get("/cors", (req, res) => {
-//   const handleCountries = () => {
-//     var myHeaders = new Headers();
-//     myHeaders.append(
-//       "Access-Control-Allow-Headers", "Content-Type",
-//       "Access-Control-Allow-Origin", "*",
-//       "Access-Control-Allow-Methods", "OPTIONS,POST,GET");
-
-//     var requestOptions = {
-//       method: "GET",
-//       headers: myHeaders,
-//       redirect: "follow",
-//     };
-
-//     fetch(
-//         `http://whois.kisa.or.kr/openapi/ipascc.jsp?query=175.196.54.203&key=2022030312202739331643&answer=json`,
-//         // `http://whois.kisa.or.kr/openapi/ipascc.jsp?query=${locationCheck}&key=2022030312202739331643&answer=json`,
-//         requestOptions
-//       )
-//       .then((response) => response.json())
-//       .then((result) => {
-//         console.log(result)
-//         // let nationCode = result.whois.countryCode.toLowerCase();
-//         // console.log(nationCode);
-//         // if (nationCode) {
-//         //   window.location.href = `http://3.38.166.125/pages/index_${nationCode}.html`;
-//         // } else {
-//         //   window.location.href = `http://3.38.166.125/pages/index_kr.html`;
-//         // }
-//       })
-//       .catch((error) => console.log("error"));
-//   };
-//   res.send(handleCountries);
-// });
 
 app.get("/check", (req, res) => {
   res.send("서버 연결 확인");
