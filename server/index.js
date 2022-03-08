@@ -6,15 +6,12 @@ const cors = require("cors");
 const mysql = require("mysql");
 
 let corsOptions = {
-  origin: '*',
+  origin: "*",
   credentials: true,
-}
+};
 
 app.use(cors(corsOptions));
 app.use(express.json());
-
-let ip = requestip.getClientIp();
-console.log(ip)
 
 const db = mysql.createConnection({
   user: "yg_admin",
@@ -44,10 +41,6 @@ app.post("/", (req, res) => {
   });
 });
 
-
-
-
-
 // 아이피 주소 받아오기 IPv6
 
 app.get("/check", (req, res) => {
@@ -58,7 +51,6 @@ app.listen(4000, () => {
   console.log("back running");
 });
 
-
 // 시간 정보
 var today = new Date();
 var year = today.getFullYear();
@@ -66,16 +58,15 @@ var month = ("0" + (today.getMonth() + 1)).slice(-2);
 var day = ("0" + (today.getDate() - 1)).slice(-2);
 var dateString = year + "-" + month + "-" + day;
 
-
 // 메일 보내기
 const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
+  host: "smtp.gmail.com",
   port: 465,
   secure: true, // use SSL
   auth: {
-    user: 'jiny0360@gmail.com',
-    pass: '364852aa!'
-  }
+    user: "jiny0360@gmail.com",
+    pass: "364852aa!",
+  },
 });
 
 const mailOptions = {
@@ -83,11 +74,13 @@ const mailOptions = {
   to: "jiny_park@jlucy.co.kr",
   subject: "Hello",
   text: "영진 랜딩페이지",
-  attachments: [{
-    filename: `user_info_${day}.xlsx`,
-    path: `user_info_${day}.xlsx`
-  }]
-}
+  attachments: [
+    {
+      filename: `user_info_${day}.xlsx`,
+      path: `user_info_${day}.xlsx`,
+    },
+  ],
+};
 
 // setInterval(() => {
 //   function check() {
