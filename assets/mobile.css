@@ -19,6 +19,12 @@
   .form input:not(.checkBox input) {
     font-size: 1.2rem;
   }
+  .form select {
+    font-size: 1.2rem;
+  }
+  .form textarea {
+    font-size: 1.2rem;
+  }
 
   /* img */
   .sec3_contents {
@@ -142,7 +148,9 @@
   .form input:not(.checkBox input) {
     padding-left: 55px;
   }
-
+  .form select {
+    padding-left: 55px;
+  }
   .form textarea {
     padding-left: 55px;
   }

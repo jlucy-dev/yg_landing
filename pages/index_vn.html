@@ -74,7 +74,9 @@
           <input type="text" placeholder="Tên" id="username" />
           <i class="fas fa-user formicon"></i>
         </div>
-        <div class="forminputbox nationBox">
+
+
+        <!-- <div class="forminputbox nationBox">
           <input list="nationlist" placeholder="Quốc tịch" id="nation" autocomplete="off" />
           <i class="fas fa-flag formicon"></i>
         </div>
@@ -83,7 +85,23 @@
           <option value="USA"></option>
           <option value="Oʻzbekiston"></option>
           <option value="etc..."></option>
-        </datalist>
+        </datalist> -->
+
+
+        <!-- bootstrap select -->
+        <div class="forminputbox nationBox">
+          <select id="nation">
+            <option value="KOREA">KOREA</option>
+            <option value="USA">USA</option>
+            <option value="UZBEKISTAN">UZBEKISTAN</option>
+            <option value="VIETNAM">VIETNAM</option>
+            <option value="etc...">etc...</option>
+          </select>
+          <i class="fas fa-flag formicon nation"></i>
+        </div>
+        <!-- //-->
+
+
         <div class="forminputbox etcBox" style="display: none">
           <input type="text" placeholder="write your country" id="nation" />
           <i class="fas fa-flag formicon"></i>
@@ -304,7 +322,7 @@
             </ul>
             </p>
           </div>
-          <div class="close cursorPoint" onclick="handlePolicyBox('none')">닫기</div>
+          <div class="close cursorPoint" onclick="handlePolicyBox('none')">Close</div>
         </div>
       </div>
     </section>
@@ -386,7 +404,7 @@
 
     // 기타 국가의 경우 작성값 추가
     let nationCheck =
-      document.querySelector(".form #nationlist").options[3].value;
+      document.querySelector(".nationBox #nation").options[4].value;
     let checkNationValue;
     nation.addEventListener("change", () => {
       if (nation.value == nationCheck) {
@@ -399,7 +417,9 @@
         });
       } else {
         checkNationValue = nation.value;
+        etcBox.style.display = "none";
         console.log(checkNationValue);
+
       }
     });
 

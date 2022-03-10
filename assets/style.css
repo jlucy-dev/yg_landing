@@ -73,6 +73,16 @@ h2 {
 input {
   padding: 20px;
   font-family: 'GmarketSansMedium';
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+}
+select {
+  padding: 20px;
+  font-family: 'GmarketSansMedium';
+  width: 100%;
+  margin-top: 20px;
+  padding-left: 66px;
+  font-size: 1.5rem;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
 }
 
 textarea {
@@ -80,6 +90,14 @@ textarea {
   height: 200px;
   padding: 20px;
   font-family: 'GmarketSansMedium';
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+}
+input::placeholder {
+  color: #2f2b6b;
+}
+textarea::placeholder {
+  color: #2f2b6b;
+  font-weight: 100;
 }
 
 /* section1 */
@@ -235,7 +253,6 @@ textarea {
   left: 3%;
   color: #696969;
 }
-
 .formicon.last {
   top: 20%;
 }

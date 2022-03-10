@@ -75,7 +75,9 @@
           <input type="text" placeholder="Имя" id="username" />
           <i class="fas fa-user formicon"></i>
         </div>
-        <div class="forminputbox nationBox">
+
+
+        <!-- <div class="forminputbox nationBox">
           <input list="nationlist" placeholder="Гражданство" id="nation" autocomplete="off" />
           <i class="fas fa-flag formicon"></i>
         </div>
@@ -84,7 +86,22 @@
           <option value="USA"></option>
           <option value="VIETNAM"></option>
           <option value="etc..."></option>
-        </datalist>
+        </datalist> -->
+
+        <!-- bootstrap select -->
+        <div class="forminputbox nationBox">
+          <select id="nation">
+            <option value="KOREA">KOREA</option>
+            <option value="USA">USA</option>
+            <option value="UZBEKISTAN">UZBEKISTAN</option>
+            <option value="VIETNAM">VIETNAM</option>
+            <option value="etc...">etc...</option>
+          </select>
+          <i class="fas fa-flag formicon nation"></i>
+        </div>
+        <!-- //-->
+
+
         <div class="forminputbox etcBox" style="display: none">
           <input type="text" placeholder="write your country" id="nation" />
           <i class="fas fa-flag formicon"></i>
@@ -108,164 +125,204 @@
       <h2>😄 Благодарим 😄</h2>
       <div id="modal">
         <div class="modal_box">
-          <h2>개인정보 처리방침 안내</h2>
+          <h2 class="modaltitle">Personal Information Handling Policy</h2>
           <div class="text_box">
             <p class="policy_text">
-              법무법인(유) 영진(이하 “법인”)은 이용자의 개인정보 보호를 매우
-              중요시하며 『정보통신망이용촉진및정보보호에관한법률』상의
-              개인정보 보호규정 및 정보통신부가 제정한 『개인정보보호지침』을
-              준수하고 있습니다.
+              We, Professional Law Firm Kim & Jung (hereinafter referred to as "Corporation") put great importance on
+              the protection of users' personal information, and comply with the Personal Information Protection
+              Regulations in the 「Act on Promotion of Information and Communications Network Utilization and Information
+              Protection」 and 「Personal Information Protection Guidelines」 established by the Ministry of Information
+              and Communication.
             </p>
             <br />
             <p class="policy_text">
-              “법인”은 개인정보 보호정책을 통하여 이용자가 제공하는 개인정보가
-              어떠한 용도와 방식으로 이용되고 있으며, 개인정보 보호를 위해
-              어떠한 조치가 취해지고 있는지 알려드립니다. “법인”은 개인정보
-              보호정책을 홈페이지 첫 화면에 공개함으로써 이용자가 언제나
-              용이하게 보실 수 있도록 조치하고 있습니다. “법인”은 개인정보
-              보호정책의 지속적인 개선을 위하여 개인정보 보호정책을 개정하는데
-              필요한 절차를 정하고 있습니다. 그리고, 개인정보 보호정책을
-              개정하는 경우, 그 변경 시 이용자가 용이하게 알아 볼 수 있도록
-              하고 있습니다. “법인”의 개인정보 보호정책을 다음과 같은 내용들로
-              구성되어 있습니다.
+              The “Corporation” informs you of the purpose and method of using the personal information provided by the
+              users through the personal information protection policy and what measures are being taken to protect
+              personal information.
+              The “Corporation” posts the personal information protection policy on the face screen of its website so
+              that users can view it easily at any time.
+              The “Corporation” has stipulated the procedures necessary to revise the personal information protection
+              policy for continuous improvement thereof. Also, in the case of revising the personal information
+              protection policy, the “Corporation” is helping the users find it easily.
+              The personal information protection policy of the “Corporation” consists of the following contents:
             </p><br />
             <ol class="policy_text policy_list">
-              <li>개인정보의 수집목적 및 이용</li>
-              <li>개인정보 항목 및 수집방법</li>
-              <li>개인정보 보유 및 이용기간</li>
-              <li>개인정보의 공유 및 제공</li>
-              <li>개인정보 보호를 위한 안전조치</li>
+              <li>Purpose of Collection and Use of Personal Information</li>
+              <li>Items and Collection Methods of Personal Information</li>
+              <li>Retention and Use Period of Personal Information</li>
+              <li>Sharing and Provision of Personal Information</li>
+              <li>Safety Measures for Protection of Personal Information</li>
               <li>
-                고객 자신의 개인정보 관리(열람, 정정, 삭제)에 관한 사항
+                Matters of Customer's Own Personal Information Management
+                (viewing, correction, deletion)
               </li>
-              <li>쿠키(cookie) 운영에 관한 사항</li>
-              <li>미성년자 및 아동의 보호정책</li>
-              <li>링크에 대한 책임</li>
-              <li>개인정보의 위탁처리</li>
-              <li>개인정보 보호 관리책임자 및 담당자</li>
+              <li>Matters of Cookie Operation</li>
+              <li>Protection Policy for Minors and Children</li>
+              <li>Responsibility for Links</li>
+              <li>Consignment Processing of Personal Information</li>
+              <li>Personal Information Protection Manager and Person in charge</li>
             </ol><br />
             <p class="policy_text">
-            <h4>개인정보의 수집목적 및 이용</h4><br />
-            <p class="policy_text">"개인정보"라 함은 생존하는 개인에 관한 정보로서 당해 정보에 포함되어 있는 성명, 주민등록번호 등의 사항에 의하여 당해 개인을 식별할 수 있는
-              정보(당해 정보만으로는 특정 개인을
-              식별할 수 없더라도 다른 정보와 용이하게 결합하여 식별할 수 있는 것을 포함)를 말합니다.
-              “법인”은 일부 서비스는 별도의 이용자 등록이 없이 언제든지 사용할 수 있습니다. 그러나 “법인”은 회원서비스를 통하여 이용자들에게 맞춤식 서비스를 비롯한 보다 더 향상된 양질의 서비스를
-              제공하기 위하여 이용자 개인의 정보를 수집하고 있습니다.
-              “법인”은 이용자의 사전 동의 없이는 이용자의 개인 정보를 함부로 공개하지 않으며, 수집된 정보는 아래와 같이 이용하고 있습니다. </p><br />
-            <p class="policy_text">첫째, 이용자들이 제공한 개인정보를 바탕으로 보다 더 유용한 서비스를 개발할 수 있습니다. “법인”은 신규 서비스개발이나 컨텐츠의 확충 시에 기존
-              이용자들이 “법인”에 제공한 개인정보를
-              바탕으로 개발해야 할 서비스의 우선 순위를 보다 더 효율적으로 정하고, “법인”은 이용자들이 필요로 할 컨텐츠를 합리적으로 선택하여 제공할 수 있습니다.
-
+            <h4>Purpose of Collection and Use of Personal Information</h4><br />
+            <p class="policy_text">"Personal information" means the information that enables to identify a specific
+              person by name, identification number, etc. as the information about a living person (including
+              information that enables to identify by combining easily with other information even if it alone cannot
+              identify a specific individual).
+              The “Corporation” may use some services at any time without separate registration as a user. However,
+              the “Corporation” collects personal information of users in order to provide better quality services
+              including customized services to users through member services.
+              The "Corporation" does not disclose user’s personal information without his/her prior consent, and the
+              collected information is used as follows:</p><br />
+            <p class="policy_text">First, we can develop more useful services on the basis of personal information
+              provided by users. When developing new services or expanding contents, the “Corporation” sets the
+              priority of the services to be developed more efficiently on the basis of the personal information
+              provided by existing users and the “Corporation” may reasonably selects and provides the contents that
+              users need.
             </p><br />
-            <p class="policy_text">둘째, “법인”이 제공하는 각종 정보 및 서비스 등은 대부분 무료입니다. “법인” 이러한 무료 서비스를 제공하기 위해서 광고를 게재할 수 있는데,
-              이용자에 대한 정확한 개인정보를
-              바탕으로 각 서비스나 메뉴 등에 적절하게 광고와 내용들을 전달해 드릴 수 있으며, 이것은 궁극적으로 “법인”이 이용자에게 드리는 또 하나의 정보로서의 가치를 지니게 됩니다. “법인”은
-              광고주들로부터 광고를 받아 광고주들이 대상으로 하려는 이용자의 유형에 맞게 광고를 보여줄 뿐, 광고주들에게는 절대로 이용자들의 개인정보를 보여주거나 제공하지 않습니다.</p>
+            <p class="policy_text">Second, most of the information and services provided by the “Corporation” are free
+              of charge. The “Corporation” may post advertisements to provide these free services; however,
+              advertisements and contents will be appropriately delivered through each service or menu to users on the
+              basis of accurate personal information of users, which will ultimately have a value as another piece of
+              information that the “Corporation” provides to users. The “Corporation” receives advertisements from
+              advertisers and only exposes the advertisements to the type of users the advertisers want to target, and
+              never shows or provides personal information of users to advertisers.</p>
             <br />
             <p class="policy_text">
-              셋째, 각 정보별 수집 목적은 다음과 같습니다.</p>
+              Third, the purpose of collecting information is as follows:</p>
             <ol class="policy_list">
-              <li>성명, 주민등록번호, ID(고유번호), Password(비밀번호) : 서비스이용에 따른 본인식별 </li>
-              <li>e-mail, 전화번호, 핸드폰번호: 공지사항 전달, 본인의사확인, 불만처리 등 원활한 의사소통 경로의 확보, 새로운 서비스나 신상품, 이벤트 정보 등 최신정보의 안내 </li>
-              <li>은행계좌정보, 신용카드정보, 핸드폰번호, 전화번호: 유료정보이용에 대한 요금결제 </li>
-              <li>주소, 전화번호, 핸드폰번호: 청구서, 물품배송시 정확한 배송지의 확보</li>
-              <li>주민등록번호, 주소: 인구통계학적 분석 </li>
-              <li>그 외 선택항목 : 개인 맞춤 서비스를 제공하기 위한 자료 </li>
+              <li>Name, Resident Registration No., Identification No., Password: Identification for use of service
+              </li>
+              <li>E-mail, Phone NO., Mobile phone No.: Delivering notice, confirming user intention, securing a smooth
+                communication channel such as handling complaints, and providing the latest information such as new
+                services, new products, and event information</li>
+              <li>Bank Account Information, Credit Card Information, Mobile Phone No., Phone No.: Payment for use of
+                paid information service</li>
+              <li>Address, Phone No., Mobile Phone No.: Securing the accurate location to deliver bills and goods</li>
+              <li> Resident Registration No., Address: Demographic analysis</li>
+              <li>Other Options: Data for customized service</li>
             </ol>
             </p>
             <p class="policy_text">
-            <h4>개인정보 항목 및 수집방법</h4><br />
-            <p class="policy_text">“법인”은 이용자가 회원서비스를 이용하기 위해 회원으로 가입하실 때 서비스 제공을 위한 필수적인 정보들을 온라인상에서 입력 받고 있습니다. 회원
-              가입시에 받는 필수적인 정보는 이름, 주민등록번호(외국인등록증), e-mail, 주소, 전화번호 등입니다.
-
-              또한 양질의 서비스 제공을 위하여 이용자가 선택적으로 입력할 수 있는 사항으로서 관심사항, 직업, “법인”이 관심사항 등을 입력 받고 있습니다. </p>
+            <h4>Items and Collection Methods of Personal Information </h4><br />
+            <p class="policy_text">When a user signs up as a member to use the member service, the “Corporation”
+              collects essential information online for service provisio. The essential information the “Corporation”
+              receives at the time of signing up as a member is name, resident registration No.(foreigner registration
+              card), e-mail, address, phone number, etc. In addition, the “Corporation” asks users to enter their
+              interest, occupation, etc. as optional items in order to provide high-quality services. </p>
             </p>
 
             <p class="policy_text">
-            <h4>개인정보 보유 및 이용기간</h4>
-            <p class="policy_text">“법인”의 회원이 자신의 개인정보 열람, 수정 및 삭제 절차에 따라 ID를 삭제하거나 가입 해지를 요청한 경우에 수집된 개인의 정보는 재생할 수 없는
-              방법에 의하여 하드디스크에서 완전히 삭제되며 어떠한 용도로도 열람 또는 이용할 수 없도록 처리됩니다.
-              그리고, 회원의 개인정보는 다음과 같이 개인정보의 수집목적 또는 제공받은 목적이 달성되면 파기됩니다. 단, 상법 등 관련법령의 규정에 의하여 다음과 같이 거래 관련 권리 의무 관계의 확인
-              등을 이유로 일정기간 보유하여야 할 필요가 있을 경우에는 일정기간 보유합니다. </p>
+            <h4>
+              Retention and Use Period of Personal Information</h4>
+            <p class="policy_text">When a member of the “Corporation” requests to delete ID or to withdraw the
+              membership in accordance with the procedures of viewing, changing and deleting personal information, the
+              collected personal information is completely deleted from the hard disk in a non-reproducible way and is
+              processed not to be viewed or used for any purpose.</p>
             <br />
             <ol class="policy_list">
-              <li>회원가입정보: 회원가입을 탈퇴하거나 회원에서 제명된 경우에 특별한 사유에 사안에 대하여 사전에 보유목적, 기간 및 보유하는 개인정보 항목을 명시하여 동의를 구합니다. </li>
-              <li>계약 또는 청약철회 등에 관한 기록: 5년</li>
-              <li>대금결제 및 재화 등의 공급에 관한 기록: 5년</li>
-              <li>소비자의 불만 또는 분쟁처리에 관한 기록: 3년</li>
+              <li>Member Registration Information: In the event of withdrawal or removal from membership, the
+                “Corporation” must obtain consent by the “Member” for a specific matter, specifying the purpose of
+                retention, period, and items of personal information to be retained. </li>
+              <li>Records of Withdrawal of Agreement or Offer: 5 years </li>
+              <li>Records of Payment and Goods Supply: 5 years</li>
+              <li>Records of Consumer Complaint or Dispute: 3 years</li>
             </ol>
             </p>
             <p class="policy_text">
-            <h4>개인정보의 공유 및 제공</h4>
-            <p class="policy_text">원칙적으로 “법인”은 이용자의 개인정보를 타인 또는 타기업 기관에 공개하지 않습니다. 다만, 아래의 경우에는 예외로 합니다. </p>
+            <h4>Sharing and Provision of Personal Information</h4>
+            <p class="policy_text">In principle, the "Corporation" does not disclose a user's personal information to
+              other people, companies or institutions. However, the following cases are exceptions:</p>
             <br />
             <ol class="policy_list">
-              <li>이용자가 공개에 동의한 경우</li>
-              <li>“법인”의 서비스 이용약관을 위배하는 경우</li>
-              <li>“법인”의 서비스를 이용하여 타인에게 법적인 피해를 주거나 미풍양속을 해치는 행위를 한 경우</li>
-              <li>기타 법적인 조치를 취하기 위하여 개인정보를 공개해야 한다고 판단되는 충분한 근거가 있는 경우</li>
+              <li>In case that a user agreed to such disclosure;</li>
+              <li>
+                In case of violating the terms and conditions of “Service” of the “Corporation”;</li>
+              <li>In the of using the “Service” of the “Corporation” to cause any legal damage to others or to harm
+                public morals; or</li>
+              <li> In case that there are sufficient grounds to consider that it is required to disclose personal
+                information in order to take legal measures.</li>
             </ol>
             </p>
             <p class="policy_text">
-            <h4>개인정보 보호를 위한 안전조치 </h4>
-            <p class="policy_text">회원의 개인정보는 기본적으로 ID(고유번호) 및 Password(비밀번호)에 의해 보호되며, 회원에게 부여된 ID(고유번호) 및
-              Password(비밀번호)에 대한 모든 관리와 책임은 회원에게 있습니다. 따라서, 회원은 서비스를 이용한 후에는 활성화된 모든 브라우저 창을 종료하여야만 합니다. 특히 다른 사람과 PC를
-              공유하여 사용하거나 공공장소(회사나 학교, 도서관, 인터넷 게임방 등)에서 이용한 경우에는 개인정보가 다른 사람에게 알려지는 것을 막기 위해 위와 같은 절차가 더욱 필요할 것입니다.
+            <h4>Safety Measures for Protection of Personal Information</h4>
+            <p class="policy_text">A Member's personal information is basically protected by ID(unique number) and
+              password(password), and all management of and responsibility for the ID(unique number) and
+              password(password) given to a “Member” are the responsibility of the “Member”. Therefore, a “Member”
+              shall close all activated browser windows after using the “Service”. In particular, if a “Member” shares
+              a PC with other people or uses it in a public place (company, school, library, internet game room,
+              etc.), the above procedure is more necessary to be takenin order to prevent personal information from
+              being disclosed to others.
             </p>
             </p>
 
             <p class="policy_text">
-            <h4>고객 자신의 개인정보 관리(열람, 정정, 삭제)에 관한 사항 </h4>
-            <p class="policy_text">회원은 언제든지 등록되어 있는 자신의 개인정보를 열람하거나 정정할 수 있으며, 가입해지를 요청할 수 있습니다. 회원의 개인 정보의 열람 및 정정은
-              “법인”의 회원정보관리에서 관리할 수 있습니다.
-              단, 회원정보 수정의 경우, ID(고유번호), 이름, 주민등록번호의 변경은 가입회원의 실명제 정책에 따라 수정이 불가능하며, 상기 사항에 대한 변경 시에는 가입해지 후 재가입하셔야
-              합니다. </p>
+            <h4>Management (viewing, changing, deletion) of Customer’s Own Personal Information</h4>
+            <p class="policy_text">A “Member” may view or revise his/her registered personal information at any time,
+              and may request withdrawal of membership. Viewing and revising of Member's personal information can be
+              done in the “Member Information Management” of the "Corporation".
+              However, in the case of changing the member’s information, ID(unique number), name and resident
+              registration No. can not be changed according to the real name policy for “Members” and even though that
+              is the case, if the “Member” wants to change, he/she must re-register.</p>
             </p>
 
             <p class="policy_text">
-            <h4>쿠키(cookie) 운영에 관한 사항</h4>
-            <p class="policy_text">이용자에게 특화된 맞춤서비스를 제공하기 위해서 “법인”은 이용자의 정보를 저장하고 수시로 불러오는 '쿠키(cookie)'를 사용합니다. 쿠키는
-              웹사이트를 운영하는데 이용되는 서버(HTTP)가 이용자의 컴퓨터 브라우저에게 보내는 소량의 정보이며, 이용자의 PC 컴퓨터내의 하드디스크에 저장되기도 합니다.
+            <h4>Matters of Cookie Operation</h4>
+            <p class="policy_text">In order to provide customized services to users, the “Corporation” is using
+              'Cookies' to store and retrieve user information occasionally. ‘Cookie’ is a small amount of information
+              sent to the user's computer browser by the server(HTTP) used to operate the website, and it can be
+              stored in the hard disk of the user's personal computer.
             </p><br />
-            <p class="policy_text">이용자가 “법인”사이트에 접속한 후 로그인(LOG-IN)하여 회원서비스 및 각종 서비스를 이용하기 위해서는 쿠키를 허용하셔야 합니다. “법인”은
-              이용자들에게 적합하고 보다 유용한 서비스를 제공하기 위해서 쿠키를 이용하여 아이디에 대한 정보를 찾아냅니다. 쿠키는 이용자의 컴퓨터는 식별하지만 이용자를 개인적으로 식별하지는 않습니다.
+            <p class="policy_text">A user must allow ‘Cookies’ by log-in after accessing the “Site” of "Corporation"
+              to use the member service and other services. The “Corporation” uses the ‘Cookie’ to find ID
+              information, in order to provide suitable and more useful services to the users. ‘Cookie’ can identify a
+              user’s computer, but does not identify the user personally.
             </p><br />
-            <p class="policy_text">쿠키를 이용하여 이용자들이 방문한 “법인”의 각 서비스와 웹 사이트들에 대한 방문 및 이용형태, 인기 검색어, 이용자 규모 등을 파악하여 더욱 더
-              편리한 서비스를 만들어 제공할 수 있고 이용자에게 최적화된 정보를 제공할 수 있습니다. 이용자는 쿠키에 대하여 사용여부를 선택할 수 있습니다. 웹브라우저에서 옵션을 설정함으로써 모든
-              쿠키를 허용할 수도 있고, 쿠키가 저장될 때마다 확인을 거치거나, 모든 쿠키의 저장을 거부할 수도 있습니다. 다만, 쿠키의 저장을 거부할 경우에는 로그인이 필요한 “법인”의 일부 서비스는
-              이용할 수 없습니다.
+            <p class="policy_text">By using the ‘Cookie’, the “Corporation” can create and provide more convenient
+              services by identifying the types of visit and use of each service and website of the “Corporation”,
+              popular search terms, and the size of users, and provide optimized information to users. A user can
+              choose whether to use ‘Cookie’ or not. By setting options in the web browser, a user may allow all of
+              the Cookies or confirm whenever ‘Cookie’ is saved, or refuse to save any of the ‘Cookie’. However, in
+              case that a user refuses to save “Cookie’, you may not be able to use some of the Services of the
+              “Corporation” that require to log in.
             </p>
             </p>
 
             <p class="policy_text">
-            <h4>미성년자 및 아동의 보호정책</h4>
-            <p class="policy_text">현행법상 만14세 미만의 어린이들은 온라인으로 타인에게 개인정보를 보내기 전에 반드시 개인정보의 수집 및 이용목적에 대하여 충분히 숙지하고
-              법정대리인의 동의를 받아야 합니다. 만14세 미만 어린이의 법정대리인은 어린이의 개인정보 열람, 정정, 동의철회를 요청할 수 있으며, 이러한 요청이 있을 경우 회사는 지체없이 필요한
-              조치를 취합니다. </p>
+            <h4>Protection Policy for Minors and Children </h4>
+            <p class="policy_text">Under the current law, children under the age of 14 should fully understand the
+              purpose of collection and the use of personal information and obtain the consent from their legal proxy
+              before sending personal information to others online. The legal proxy of a child under the age of 14 may
+              request viewing and correction of or withdrawal of the consent to the child's personal information, and
+              the “Corporation” shall take necessary measures immediately. </p>
             </p>
             <p class="policy_text">
-            <h4>링크 사이트에 대한 책임</h4>
-            <p class="policy_text">“법인”의 홈페이지에는 다양한 배너와 링크를 포함하고 있습니다. 많은 경우 타 사이트의 페이지와 연결되어 있으며 이는 광고주와의 계약관계에 의하거나
-              제공받은 콘텐츠의 출처를 밝히기 위한 조치입니다.
-
-              “법인”의 홈페이지가 포함하고 있는 링크를 클릭하여 타 사이트의 페이지로 옮겨갈 경우 해당 사이트에서 개인정보를 수집하는 행위에 대해서는 본 “개인정보취급방침”이 적용되지 않습니다
+            <h4>Responsibility for Links</h4>
+            <p class="policy_text">The website of “Corporation” contains various banners and links. In many cases, it
+              is linked to the pages of other sites, and this is a measure to reveal the source of the content
+              provided by or the contractual relationship with the advertiser.
+              If a user clicks the link included in the website of the “Corporation” and moves to the page of another
+              site, this “Personal Information Handling Policy” does not apply to the act of collecting personal
+              information on that site.
             </p>
             </p>
             <br />
             <p class="policy_text">
-            <h4>개인정보의 위탁처리</h4>
-            <p class="policy_text">“법인”은 서비스 향상을 위해서 이용자들의 개인정보를 외부전문업체에 위탁하여 처리할 수 있습니다. 개인정보의 처리를 위탁하는 경우에는 미리 그 사실을
-              이용자들에게 공지할 것입니다. 또한 위탁계약 등을 통하여 서비스제공자의 개인정보보호 관련 지시엄수, 개인정보에 관한 비밀유지, 제3자 제공의 금지 및 사고시의 책임부담 등을 명확히
-              규정하고 당해 계약내용을 서면 또는 전자적으로 보관할 것입니다. </p>
+            <h4>Consignment Processing of Personal Information</h4>
+            <p class="policy_text">The "Corporation" may entrust the processing of users' personal information to
+              another specialized company for service improvement. If the processing of personal information is
+              outsourced, the “Corporation” will notify it to the users in advance. In addition, the “Corporation”
+              will clearly stipulate the service provider's compliance with the instructions for personal information
+              protection, prohibition of disclosure to a third party, and liability for an accident, etc., and shall
+              store the contents of the concerned agreement in writing or electronically.</p>
             <ul class="policy_list">
-              <li>개인정보 보호책임자</li>
-              <li>성명 : 김종민</li>
-              <li>직위 : 사무국장</li>
-              <li>연락처 : 02-553-9300</li>
+              <li>Personal Information Protection Manager</li>
+              <li>Name: Joingmin Kim</li>
+              <li>Title: General Manager</li>
+              <li>Contact No.: 02-553-9300</li>
             </ul>
             </p>
           </div>
-          <div class="close cursorPoint" onclick="handlePolicyBox('none')">닫기</div>
+          <div class="close cursorPoint" onclick="handlePolicyBox('none')">Close</div>
         </div>
       </div>
     </section>
@@ -347,7 +404,7 @@
 
     // 기타 국가의 경우 작성값 추가
     let nationCheck =
-      document.querySelector(".form #nationlist").options[3].value;
+      document.querySelector(".nationBox #nation").options[4].value;
     let checkNationValue;
     nation.addEventListener("change", () => {
       if (nation.value == nationCheck) {
@@ -360,15 +417,15 @@
         });
       } else {
         checkNationValue = nation.value;
+        etcBox.style.display = "none";
         console.log(checkNationValue);
+
       }
     });
 
     Form.addEventListener("submit", (e) => {
       e.preventDefault();
       validateForm();
-
-
     });
 
     function validateForm(event) {
