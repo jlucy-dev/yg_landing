@@ -155,7 +155,6 @@ async function sendMail() {
         path: `user_info_${day}.xlsx`,
       }, ],
     }
-
     const result = await transport.sendMail(mailOptions)
     return result;
   } catch (error) {
