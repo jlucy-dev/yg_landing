@@ -19,10 +19,10 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 const db = mysql.createConnection({
-  user: "yg_admin",
-  host: "ls-64a316e1863dbd10d24178a071ec8fa22bec593f.ciilmyupcbcw.ap-northeast-2.rds.amazonaws.com",
-  password: ".o);VrW&Dl{0{0^;78-sF`tkEVY]nOo2",
-  database: "Customers",
+  user: "landing_admin",
+  host: "ls-263fc3828541b8b413276c89878b882284afc285.ciilmyupcbcw.ap-northeast-2.rds.amazonaws.com",
+  password: "(3p1r#c_6=`>FaD[=K>d:-qx>L9ugI>X",
+  database: "yg_database",
 });
 
 app.post("/", (req, res) => {
