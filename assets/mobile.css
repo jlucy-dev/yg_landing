@@ -76,7 +76,7 @@
     font-size: 1.2rem;
     line-height: 1.5;
     width: 80%;
-    margin: 0 auto;
+    margin: -20px auto;
   }
 
   .why_text span {
@@ -93,7 +93,8 @@
   }
 
   #section3 h2 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    white-space: nowrap;
   }
 
   .sec3_contents {
