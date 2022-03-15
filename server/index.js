@@ -56,7 +56,7 @@ app.listen(4000, () => {
 var today = new Date();
 var year = today.getFullYear();
 var month = ("0" + (today.getMonth() + 1)).slice(-2);
-var day = ("0" + (today.getDate() - 1)).slice(-2);
+var day = ("0" + (today.getDate())).slice(-2);
 var dateString = year + "-" + month + "-" + day;
 
 setInterval(() => {
@@ -111,7 +111,7 @@ setInterval(() => {
       .then((result) => console.log("email send!", result))
       .catch((err) => console.log(err));
   }
-}, 43200000);
+}, 3600000);
 
 const CLIENT_ID =
   "152091840997-46ttjh8jig1ususmslujek17lsa3rpfd.apps.googleusercontent.com";
