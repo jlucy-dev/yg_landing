@@ -53,15 +53,16 @@ app.listen(4000, () => {
 });
 
 // 시간 정보
-var today = new Date();
-var year = today.getFullYear();
-var month = ("0" + (today.getMonth() + 1)).slice(-2);
-var day = ("0" + (today.getDate())).slice(-2);
-var dateString = year + "-" + month + "-" + day;
 
 setInterval(() => {
+  let today = new Date();
+  let year = today.getFullYear();
+  let month = ("0" + (today.getMonth() + 1)).slice(-2);
+  let day = ("0" + (today.getDate() - 1)).slice(-2);
+  let dateString = year + "-" + month + "-" + day;
+  let newDay = day;
   function check() {
-    let sqlDate = `SELECT name, nation, contact, message, date FROM customer WHERE date LIKE "2022-${month}-${day}%"`;
+    let sqlDate = `SELECT name, nation, contact, message, date FROM customer WHERE date LIKE "2022-${month}-${newDay}%"`;
     db.query(sqlDate, (err, rows) => {
       if (err) {
         console.log(err);
@@ -75,7 +76,7 @@ setInterval(() => {
   check();
 
   function addExcel(event) {
-    console.log(`Sending Day info ${month}-${day}`);
+    console.log(`Sending Day info ${month}-${newDay}`);
     const workbook = new Exceljs.Workbook();
     workbook.creator = "jlucy";
     const worksheet = workbook.addWorksheet("유저 리스트");
@@ -106,7 +107,7 @@ setInterval(() => {
     rawData.map((data, index) => {
       worksheet.addRow(data);
     });
-    workbook.xlsx.writeFile(`./user_info_${day}.xlsx`);
+    workbook.xlsx.writeFile(`./user_info_${newDay}.xlsx`);
     sendMail()
       .then((result) => console.log("email send!", result))
       .catch((err) => console.log(err));
@@ -146,12 +147,12 @@ async function sendMail() {
     const mailOptions = {
       from: "jiny_park@jlucy.co.kr",
       to: "jiny0360@gmail.com, jiny3360@naver.com",
-      subject: `${day}일차 DB자료 보내드립니다.`,
+      subject: `${newDay}일차 DB자료 보내드립니다.`,
       text: "제이루시 담당자입니다. DB자료 보내드립니다. 이상 시 문의 주시면 조속한 조치를 하도록 하겠습니다.",
       attachments: [
         {
-          filename: `user_info_${day}.xlsx`,
-          path: `user_info_${day}.xlsx`,
+          filename: `user_info_${newDay}.xlsx`,
+          path: `user_info_${newDay}.xlsx`,
         },
       ],
     };
