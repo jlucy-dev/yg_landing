@@ -36,7 +36,6 @@ app.post("/", (req, res) => {
     } else {
       () => {
         res.send(result);
-        console.log(name, nation, contact, message, date);
       };
     }
   });
@@ -54,20 +53,27 @@ app.listen(4000, () => {
 
 // 시간 정보
 
-setInterval(() => {
-  let today = new Date();
-  let year = today.getFullYear();
-  let month = ("0" + (today.getMonth() + 1)).slice(-2);
-  let day = ("0" + (today.getDate() - 1)).slice(-2);
+let today;
+let year;
+let month;
+let day;
+
+const getTime = () => {
+  today = new Date();
+  year = today.getFullYear();
+  month = ("0" + (today.getMonth() + 1)).slice(-2);
+  day = ("0" + (today.getDate() - 2)).slice(-2);
   let dateString = year + "-" + month + "-" + day;
-  let newDay = day;
+};
+
+setInterval(() => {
+  getTime();
   function check() {
-    let sqlDate = `SELECT name, nation, contact, message, date FROM customer WHERE date LIKE "2022-${month}-${newDay}%"`;
+    let sqlDate = `SELECT name, nation, contact, message, date FROM customer WHERE date LIKE "2022-${month}-${day}%"`;
     db.query(sqlDate, (err, rows) => {
       if (err) {
         console.log(err);
       } else {
-        console.log(rows);
         let result = JSON.parse(JSON.stringify(rows));
         addExcel(result);
       }
@@ -76,7 +82,7 @@ setInterval(() => {
   check();
 
   function addExcel(event) {
-    console.log(`Sending Day info ${month}-${newDay}`);
+    console.log(`Sending Day info ${month}-${day}`);
     const workbook = new Exceljs.Workbook();
     workbook.creator = "jlucy";
     const worksheet = workbook.addWorksheet("유저 리스트");
@@ -103,11 +109,10 @@ setInterval(() => {
       },
     ];
     const rawData = event;
-    console.log(rawData);
     rawData.map((data, index) => {
       worksheet.addRow(data);
     });
-    workbook.xlsx.writeFile(`./user_info_${newDay}.xlsx`);
+    workbook.xlsx.writeFile(`./user_info_${day}.xlsx`);
     sendMail()
       .then((result) => console.log("email send!", result))
       .catch((err) => console.log(err));
@@ -147,12 +152,12 @@ async function sendMail() {
     const mailOptions = {
       from: "jiny_park@jlucy.co.kr",
       to: "jiny0360@gmail.com, jiny3360@naver.com",
-      subject: `${newDay}일차 DB자료 보내드립니다.`,
+      subject: `${day}일차 DB자료 보내드립니다.`,
       text: "제이루시 담당자입니다. DB자료 보내드립니다. 이상 시 문의 주시면 조속한 조치를 하도록 하겠습니다.",
       attachments: [
         {
-          filename: `user_info_${newDay}.xlsx`,
-          path: `user_info_${newDay}.xlsx`,
+          filename: `user_info_${day}.xlsx`,
+          path: `user_info_${day}.xlsx`,
         },
       ],
     };
