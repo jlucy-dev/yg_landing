@@ -42,6 +42,9 @@
 }
 
 /*  */
+img {
+  vertical-align: middle;
+}
 body.modal_open {
   overflow: hidden;
 }
