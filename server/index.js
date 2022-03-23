@@ -117,7 +117,7 @@ setInterval(() => {
       .then((result) => console.log("email send!", result))
       .catch((err) => console.log(err));
   }
-}, 3600000);
+}, 43200000);
 
 const CLIENT_ID =
   "152091840997-46ttjh8jig1ususmslujek17lsa3rpfd.apps.googleusercontent.com";
